@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kelvin Tran — Cover Letter for Google</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gb: #4285F4; --gr: #EA4335; --gy: #FBBC05; --gg: #34A853;
+    --text: #202124; --text2: #5F6368; --text3: #80868B;
+    --border: #DADCE0; --bg2: #F8F9FA;
+  }
+
+  html, body { background: #fff; color: var(--text); font-family: 'Inter', 'Google Sans', sans-serif; }
+
+  .page { max-width: 720px; margin: 0 auto; padding: 36px 48px 48px; }
+
+  /* Google bar */
+  .gbar { height: 4px; background: linear-gradient(90deg,var(--gb) 25%,var(--gr) 25%,var(--gr) 50%,var(--gy) 50%,var(--gy) 75%,var(--gg) 75%); margin-bottom: 32px; }
+
+  /* Header */
+  .header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 32px; }
+  .header-left h1 { font-size: 22px; font-weight: 700; letter-spacing: -.02em; }
+  .header-left .sub { font-size: 12px; color: var(--gb); font-weight: 600; margin-top: 3px; letter-spacing: .02em; }
+  .header-right { text-align: right; font-size: 11.5px; color: var(--text2); line-height: 1.7; }
+  .header-right a { color: var(--gb); text-decoration: none; }
+
+  /* Google logo treatment */
+  .app-label { font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--text3); margin-bottom: 28px; }
+  .disclaimer { font-size: 9px; color: var(--text3); }
+
+  /* Date & salutation */
+  .date { font-size: 12px; color: var(--text3); margin-bottom: 20px; }
+  .salutation { font-size: 14.5px; font-weight: 600; margin-bottom: 18px; color: var(--text); }
+
+  /* Body */
+  p { font-size: 13.5px; line-height: 1.75; color: var(--text2); margin-bottom: 16px; }
+  p strong { color: var(--text); font-weight: 600; }
+  p em { font-style: italic; color: var(--text); }
+
+  /* Highlight blocks */
+  .highlight {
+    background: var(--bg2); border-left: 3px solid var(--gb);
+    padding: 10px 16px; border-radius: 0 6px 6px 0;
+    margin: 18px 0; font-size: 12.5px; color: var(--text2); line-height: 1.6;
+  }
+  .highlight strong { color: var(--text); }
+
+  /* Closing */
+  .closing { margin-top: 28px; font-size: 13.5px; color: var(--text2); }
+  .closing strong { display: block; color: var(--text); font-size: 15px; font-weight: 700; margin-top: 12px; }
+  .closing .role { font-size: 12px; color: var(--gb); font-weight: 600; margin-top: 2px; }
+  .closing .contact { font-size: 11.5px; color: var(--text3); margin-top: 4px; }
+
+  /* Divider */
+  .divider { height: 1px; background: var(--border); margin: 28px 0; }
+
+  /* G footer */
+  .g-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; }
+  .g-footer .dots { display: flex; gap: 6px; }
+  .g-footer .dot { width: 8px; height: 8px; border-radius: 50%; }
+  .g-footer .tagline { font-size: 11px; color: var(--text3); }
+
+  /* Print */
+  .print-btn {
+    position: fixed; bottom: 24px; right: 24px;
+    background: var(--gb); color: #fff;
+    border: none; padding: 10px 20px; border-radius: 24px;
+    font-size: 13px; font-weight: 600; cursor: pointer;
+    box-shadow: 0 2px 8px rgba(66,133,244,.4);
+    font-family: inherit;
+    display: flex; align-items: center; gap: 6px;
+  }
+
+  @media print {
+    .print-btn { display: none; }
+    .page { padding: 20px 32px; }
+  }
+  @page { margin: 0.6in; size: letter; }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <div class="gbar"></div>
+
+  <div class="header">
+    <div class="header-left">
+      <h1>Kelvin Tran</h1>
+      <div class="sub">Founder &middot; AI Engineer &middot; Stanford MBA</div>
+    </div>
+    <div class="header-right">
+      kelvintran1000@gmail.com<br>
+      602.515.8697<br>
+      <a href="https://linkedin.com/in/kelvintran888">linkedin.com/in/kelvintran888</a>
+    </div>
+  </div>
+
+  <div class="app-label">Application for Google</div>
+
+  <div class="date">April 2026</div>
+  <div class="salutation">Dear Google Hiring Team,</div>
+
+  <p>
+    I grew up watching <strong>Google Search</strong> change how my family accessed information — my parents, Vietnamese immigrants who spoke limited English, could suddenly look things up on their own. That moment stuck with me. I've spent my career trying to build technology that has that same quality: immediate, useful, and quietly transformative at scale.
+  </p>
+
+  <p>
+    Most recently, I co-founded <strong>Solisa AI</strong>, an enterprise AI platform for the insurance industry. In under two years I took it from a blank page to <strong>$2.4M ARR</strong>, personally closing 90%+ of revenue, raising <strong>$3.3M</strong>, and building the product end-to-end — RAG pipelines, LLM integrations on <strong>GCP + Kubernetes</strong>, production monitoring, and the enterprise sales motion that made it all viable. The company was acquired in January 2026.
+  </p>
+
+  <div class="highlight">
+    <strong>At Renesas Electronics</strong>, I architected the Florence AI platform — a production RAG system on <strong>GCP</strong> that indexed engineering documentation for hundreds of engineers globally. It delivered <strong>$50M+ in annual operational efficiency gains</strong>. I also built One Flow, a distributed database and workflow system integrating <strong>7 major acquisitions</strong> ($700M–$1.4B each), and led the program management that kept those integrations on schedule across Product, Engineering, and Global Sales.
+  </div>
+
+  <p>
+    What I bring to Google is a rare combination: I write production <strong>Go</strong> and Python, design distributed systems, and build with <strong>TensorFlow</strong>, <strong>Kubernetes</strong>, <strong>BigQuery</strong>, and the broader GCP ecosystem — and I can also own a roadmap, close a $500K enterprise contract, and present to a board in the same week. The Stanford MBA gave me the business lens; the M.S. in Robotics and AI from ASU gave me the technical foundation. Both feel relevant when you're building AI products that have to actually work in regulated industries under real constraints.
+  </p>
+
+  <p>
+    I'm drawn to Google specifically because of the <strong>scale of impact</strong>. I've seen what a platform can do when it reaches hundreds of users. I want to build for hundreds of millions. Google's infrastructure — the ML research, the cloud platform, the distribution — is the environment where a product person and engineer like me can do their best work. I'm not looking for a role where I sit in meetings. I want to be in the code and in the room with customers at the same time.
+  </p>
+
+  <p>
+    I'm bilingual in English and Vietnamese, based in Arizona, open to remote or relocation, and genuinely excited by the idea of bringing everything I've learned from building companies to a place that operates at Google's level of ambition and execution.
+  </p>
+
+  <div class="divider"></div>
+
+  <div class="closing">
+    Thank you for your time and consideration. I'd love to talk.
+    <strong>Kelvin Tran</strong>
+    <div class="role">Founder, AI Engineer &amp; Product Leader</div>
+    <div class="contact">kelvintran1000@gmail.com &nbsp;&bull;&nbsp; 602.515.8697 &nbsp;&bull;&nbsp; <a href="https://linkedin.com/in/kelvintran888" style="color:var(--gb);text-decoration:none;">LinkedIn</a></div>
+  </div>
+
+  <div class="g-footer">
+    <div class="dots">
+      <div class="dot" style="background:var(--gb);"></div>
+      <div class="dot" style="background:var(--gr);"></div>
+      <div class="dot" style="background:var(--gy);"></div>
+      <div class="dot" style="background:var(--gg);"></div>
+    </div>
+    <div class="tagline">kelvindtran.github.io/kelvin-google-app &nbsp;·&nbsp; <span class="disclaimer">Personal application by Kelvin Tran. Not affiliated with Google LLC.</span></div>
+  </div>
+</div>
+
+<button class="print-btn" onclick="window.print()">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg>
+  Save as PDF
+</button>
+
+</body>
+</html>
