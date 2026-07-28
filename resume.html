@@ -3,84 +3,88 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kelvin Tran — Resume</title>
-<meta name="description" content="Kelvin Tran — Founder and AI engineer. DoorStopper AI, Kijestic, Solisa AI (venture-backed), Renesas Electronics.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<title>Kelvin Tran / Resume</title>
+<meta name="description" content="Kelvin Tran, founder and AI engineer. Kijestic AI, Dermetry AI, Dasom Essence, Solisa AI (venture-backed), Renesas Electronics.">
+<meta name="theme-color" content="#050607">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23050607'/><path d='M9 7v18M9 16l9-9M9 16l10 9' stroke='%232FE6D0' stroke-width='2.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --bg: #0B0C10;
-    --border: rgba(255,255,255,0.08);
-    --text: #EDEEF2; --muted: #9BA1AE; --dim: #686E7B; --accent: #8B9DFF;
-    --serif: 'Instrument Serif', Georgia, serif;
-    --sans: 'Inter', system-ui, sans-serif;
+    --ink: #050607; --carbon: #0A0D0F;
+    --turq: #2FE6D0; --turq-deep: #0FB9A8; --wash: rgba(47,230,208,.08);
+    --bone: #E9EFEE; --ash: #93A3A1; --slate: #5E6C6B;
+    --line: rgba(233,239,238,.09); --line-hi: rgba(47,230,208,.38);
+    --display: 'Space Grotesk', system-ui, sans-serif;
+    --body: 'Inter', system-ui, sans-serif;
     --mono: 'JetBrains Mono', ui-monospace, monospace;
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
   }
-  body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 15px; line-height: 1.6; }
-  a { color: var(--accent); text-decoration: none; }
+  body { background: var(--ink); color: var(--bone); font-family: var(--body); font-size: 15px; line-height: 1.62; }
+  a { color: var(--turq); text-decoration: none; }
   a:hover { text-decoration: underline; }
-  .page { max-width: 880px; margin: 0 auto; padding: 48px 28px 90px; }
+  :focus-visible { outline: 2px solid var(--turq); outline-offset: 3px; }
+  .page { max-width: 900px; margin: 0 auto; padding: 44px 26px 88px; }
 
-  .backlink { font-family: var(--mono); font-size: 12px; color: var(--dim); display: inline-block; margin-bottom: 30px; }
-  .backlink:hover { color: var(--text); text-decoration: none; }
+  .back { font-family: var(--mono); font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--slate); display: inline-flex; align-items: center; gap: 8px; margin-bottom: 34px; transition: color .2s var(--ease); }
+  .back:hover { color: var(--turq); text-decoration: none; }
 
-  header { border-bottom: 1px solid var(--border); padding-bottom: 24px; }
-  header h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(38px, 5.5vw, 54px); line-height: 1; letter-spacing: -.01em; }
-  header .tagline { color: var(--accent); font-size: 15px; font-weight: 500; margin-top: 10px; }
-  header .contact { color: var(--muted); font-size: 13.5px; margin-top: 12px; }
-  header .contact span.d { color: var(--dim); margin: 0 8px; }
+  header { border-bottom: 1px solid var(--line); padding-bottom: 24px; }
+  header h1 { font-family: var(--display); font-weight: 700; font-size: clamp(36px, 5.4vw, 54px); letter-spacing: -.04em; line-height: 1; }
+  header .tag { font-family: var(--mono); font-size: 11.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--turq); margin-top: 12px; }
+  header .contact { color: var(--ash); font-size: 13.5px; margin-top: 13px; }
+  header .contact i { font-style: normal; color: var(--slate); margin: 0 8px; }
 
-  .summary { color: var(--muted); font-size: 15px; margin: 24px 0 4px; }
-  .summary strong { color: var(--text); font-weight: 600; }
+  .summary { color: var(--ash); font-size: 15px; margin-top: 24px; }
+  .summary strong { color: var(--bone); font-weight: 600; }
 
   h2.sec {
-    font-family: var(--mono); font-size: 11.5px; font-weight: 500; letter-spacing: .18em;
-    text-transform: uppercase; color: var(--accent);
-    margin: 42px 0 18px; padding-bottom: 10px; border-bottom: 1px solid var(--border);
+    font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase;
+    color: var(--turq); margin: 42px 0 18px; padding-bottom: 9px; border-bottom: 1px solid var(--line);
+    display: flex; align-items: baseline; gap: 12px;
   }
+  h2.sec b { color: var(--slate); font-weight: 400; }
 
-  .job { margin-bottom: 28px; }
+  .job { margin-bottom: 26px; }
   .job .top { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; }
-  .job h3 { font-size: 17px; font-weight: 700; letter-spacing: -.01em; }
-  .job h3 .co { color: var(--accent); }
-  .job h3 .tag { font-family: var(--mono); font-size: 10.5px; color: var(--dim); letter-spacing: .1em; }
-  .job .when { font-family: var(--mono); font-size: 12px; color: var(--dim); white-space: nowrap; }
-  .job .blurb { color: var(--dim); font-size: 13.5px; font-style: italic; margin: 5px 0 10px; }
+  .job h3 { font-family: var(--display); font-size: 17.5px; font-weight: 700; letter-spacing: -.02em; }
+  .job h3 span.co { color: var(--turq); }
+  .job h3 span.tag { font-family: var(--mono); font-size: 10px; letter-spacing: .12em; color: var(--slate); margin-left: 6px; }
+  .job .when { font-family: var(--mono); font-size: 11.5px; color: var(--slate); white-space: nowrap; }
+  .job .blurb { color: var(--slate); font-size: 13.5px; font-style: italic; margin: 5px 0 10px; }
   ul { list-style: none; }
-  li { color: var(--muted); font-size: 14.5px; padding: 4px 0 4px 18px; position: relative; }
-  li::before { content: "▪"; position: absolute; left: 0; top: 7px; color: var(--accent); font-size: 10px; }
-  li strong, li b { color: var(--text); font-weight: 600; }
+  li { color: var(--ash); font-size: 14.5px; padding: 4px 0 4px 17px; position: relative; }
+  li::before { content: ''; position: absolute; left: 0; top: 13px; width: 7px; height: 1px; background: var(--turq); opacity: .7; }
+  li strong, li b { color: var(--bone); font-weight: 600; }
 
-  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
   @media (max-width: 700px) { .two { grid-template-columns: 1fr; } }
-
-  .skill { display: grid; grid-template-columns: 155px 1fr; gap: 18px; padding: 9px 0; align-items: baseline; }
+  .skill { display: grid; grid-template-columns: 158px 1fr; gap: 18px; padding: 9px 0; align-items: baseline; }
   @media (max-width: 700px) { .skill { grid-template-columns: 1fr; gap: 2px; } }
-  .skill .k { font-family: var(--mono); font-size: 11.5px; color: var(--dim); text-transform: uppercase; letter-spacing: .08em; }
-  .skill .v { color: var(--muted); font-size: 14.5px; }
-
-  .edu-block { margin-bottom: 18px; }
-  .edu-block h4 { font-size: 15.5px; font-weight: 700; }
-  .edu-block .sub { color: var(--dim); font-size: 13px; margin-top: 2px; }
-  .edu-block p { color: var(--muted); font-size: 13.5px; margin-top: 6px; }
+  .skill .k { font-family: var(--mono); font-size: 11px; color: var(--slate); text-transform: uppercase; letter-spacing: .12em; }
+  .skill .v { color: var(--ash); font-size: 14.5px; }
+  .edu h4 { font-size: 15.5px; font-weight: 600; }
+  .edu .sub { color: var(--slate); font-size: 12.5px; margin-top: 3px; }
+  .edu p { color: var(--ash); font-size: 13.5px; margin-top: 7px; }
+  .edu > div { margin-bottom: 16px; }
 
   @media print {
     @page { margin: 0.5in; }
     body { background: #fff; color: #111; font-size: 10pt; line-height: 1.4; }
     .page { max-width: none; padding: 0; }
-    .backlink { display: none; }
+    .back { display: none; }
     a { color: #111; }
     header { border-bottom: 1.5pt solid #111; padding-bottom: 9pt; }
     header h1 { font-size: 25pt; }
-    header .tagline { color: #333; font-size: 10pt; }
-    header .contact, .summary, li, .skill .v, .edu-block p { color: #222; }
-    header .contact span.d, .job .when, .job .blurb, .edu-block .sub, .skill .k, .job h3 .tag { color: #555; }
-    h2.sec { color: #111; border-bottom: 0.5pt solid #999; margin: 15pt 0 8pt; font-size: 8.5pt; }
+    header .tag { color: #444; font-size: 8.5pt; }
+    header .contact, .summary, li, .skill .v, .edu p { color: #222; }
+    header .contact i, .job .when, .job .blurb, .edu .sub, .skill .k, .job h3 span.tag, h2.sec b { color: #555; }
+    h2.sec { color: #111; border-bottom: .5pt solid #999; margin: 15pt 0 8pt; font-size: 8.5pt; }
     .job { margin-bottom: 11pt; page-break-inside: avoid; }
-    .job h3 .co, li::before { color: #111; }
+    .job h3 span.co { color: #111; }
+    li::before { background: #111; opacity: 1; }
     li strong, li b, .summary strong { color: #000; }
   }
 </style>
@@ -88,14 +92,17 @@
 <body>
 <div class="page">
 
-  <a class="backlink" href="index.html">← Back to kelvindtran.com</a>
+  <a class="back" href="index.html">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+    kelvindtran.com
+  </a>
 
   <header>
     <h1>Kelvin Tran</h1>
-    <div class="tagline">Founder · AI Engineer · Product &amp; GTM Leader</div>
+    <div class="tag">Founder / AI Engineer / Product &amp; GTM</div>
     <div class="contact">
-      Gilbert, AZ <span class="d">·</span> (602) 515-8697 <span class="d">·</span>
-      <a href="mailto:kelvintran1000@gmail.com">kelvintran1000@gmail.com</a> <span class="d">·</span>
+      Gilbert, AZ <i>·</i> (602) 515-8697 <i>·</i>
+      <a href="mailto:kelvintran1000@gmail.com">kelvintran1000@gmail.com</a> <i>·</i>
       <a href="https://linkedin.com/in/kelvintran888" target="_blank" rel="noopener">linkedin.com/in/kelvintran888</a>
     </div>
   </header>
@@ -103,54 +110,80 @@
   <p class="summary">
     Software engineer and <strong>four-time founder with one exit</strong> who designs, builds, sells, and
     operates AI products end to end. Built enterprise integration platforms and predictive ML systems at
-    Renesas Electronics, then founded and scaled AI companies in insurance, mental wellness, and real
-    estate. Currently running <strong>DoorStopper AI</strong> (revenue positive) and <strong>Kijestic</strong>,
-    an agentic AI infrastructure company. Fluent in English and Vietnamese.
+    Renesas Electronics, then founded and scaled AI companies in insurance, mental wellness, and real estate.
+    Currently running <strong>Kijestic AI</strong>, <strong>Dermetry AI</strong>, and <strong>Dasom Essence</strong>.
+    Fluent in English and Vietnamese.
   </p>
 
-  <h2 class="sec">Experience</h2>
+  <h2 class="sec">Experience <b>current</b></h2>
 
   <div class="job">
     <div class="top">
-      <h3>Founder, <span class="co">DoorStopper AI</span></h3>
-      <div class="when">Apr 2026 – Present · Chandler, AZ</div>
-    </div>
-    <div class="blurb">AI tenant placement that turns into autonomous property management. Delaware C-Corp, revenue positive.</div>
-    <ul>
-      <li>Scaled to <strong>$52M in assets under management</strong> before pivoting the model to placement-first.</li>
-      <li><strong>8 placements, $12.8K collected, and 3 signed licensed brokerage partnerships</strong> within the first 3 months.</li>
-      <li>Built the platform solo: Next.js SaaS, AI leasing agent, speed-to-lead automation answering inbound rental leads in under 60 seconds and booking appointments 24/7, multi-platform listing syndication, and outcome-based placement billing on Stripe.</li>
-      <li>Scope, price, and close every engagement myself, then own delivery: the full presales-to-delivery motion.</li>
-      <li>Raising a seed round; <strong>$68K committed</strong>.</li>
-    </ul>
-  </div>
-
-  <div class="job">
-    <div class="top">
-      <h3>Founder, <span class="co">Kijestic</span></h3>
-      <div class="when">Feb 2026 – Present · Chandler, AZ</div>
+      <h3>Founder, <span class="co">Kijestic AI</span></h3>
+      <div class="when">Feb 2026 to present · Chandler, AZ</div>
     </div>
     <div class="blurb">Cognitive infrastructure for AI agents: connecting the right knowledge and skills at the exact moment they are needed.</div>
     <ul>
       <li>Designed and operate a <strong>production multi-agent platform</strong>: 11 task-queue daemons with per-department routing, atomic task claiming, and quality gates that block low-quality output before it ships.</li>
       <li>Built MCP tool integrations and <strong>multi-provider LLM routing</strong> (Anthropic, OpenAI, Google, DeepSeek, xAI) with failover chains, per-call cost tracking, and a model-ID allowlist guard.</li>
       <li>Integrated agents with enterprise surfaces: Gmail and Google Calendar OAuth, Stripe webhooks, Supabase/Postgres state, and a dedicated agent mailbox with provider failover.</li>
-      <li>Run marketing, operations, and outreach for a roster of <strong>7 client accounts</strong> spanning med spa, beauty and nail salons, real estate, K-beauty skincare, and consumer supplements. Scope, price, and close every engagement myself.</li>
-      <li>Run delivery governance solo: plan-before-execute protocol, permission tiers, council review for risky changes, and post-incident lessons.</li>
+      <li>Run marketing, operations, and outreach for <strong>7 client accounts</strong> spanning med spa, beauty, real estate, K-beauty skincare, and consumer supplements. Scope, price, and close every engagement myself.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="top">
+      <h3>Founder, <span class="co">Dermetry AI</span></h3>
+      <div class="when">Jun 2026 to present · Chandler, AZ</div>
+    </div>
+    <div class="blurb">AI skin analysis. On-device computer vision scores skin attributes in seconds and turns the result into practical guidance.</div>
+    <ul>
+      <li>Shipped <strong>Face Verdict</strong>, a live consumer product taking payments: it analyzes facial proportions on-device, ranks a hairstyle catalogue deterministically, and renders identity-locked previews on the user's own photo.</li>
+      <li>Built <strong>Dermetry Pro</strong>, an embeddable skin-scan widget that installs with one script tag and maps scan results to a business's product catalogue or booking flow. Running inside real med spa and beauty stores.</li>
+      <li>Architected the privacy position that differentiates the category: <strong>processing is on-device and photos are never stored</strong>.</li>
+      <li>Own the full stack: computer vision pipeline, Next.js apps, Stripe credit ledger, and the go-to-market.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="top">
+      <h3>Operating Partner, <span class="co">Dasom Essence</span></h3>
+      <div class="when">Jun 2026 to present · Ajax, ON</div>
+    </div>
+    <div class="blurb">Premium K-beauty skincare brand selling PDRN-based products direct to consumers.</div>
+    <ul>
+      <li>Run the brand end to end: <strong>growth, content, product, and ecommerce operations</strong>.</li>
+      <li>Built the reviews and trust system, the content engine, and the product page rebuild that addressed the brand's conversion gaps.</li>
+      <li>Applied the Kijestic agent fleet to a live consumer brand, turning infrastructure into measurable commercial output.</li>
+    </ul>
+  </div>
+
+  <h2 class="sec">Experience <b>prior</b></h2>
+
+  <div class="job">
+    <div class="top">
+      <h3>Founder, <span class="co">DoorStopper AI</span></h3>
+      <div class="when">Apr 2026 to Jun 2026 · Chandler, AZ</div>
+    </div>
+    <div class="blurb">AI tenant placement that turns into autonomous property management. Delaware C-Corp.</div>
+    <ul>
+      <li>Reached <strong>$52M in assets under management</strong> before pivoting the model to placement-first.</li>
+      <li><strong>8 placements, $12.8K collected, and 3 signed licensed brokerage partnerships</strong> within the first three months.</li>
+      <li>Built the platform solo: Next.js SaaS, an AI leasing agent answering inbound rental leads in under 60 seconds and booking appointments 24/7, multi-platform listing syndication, and outcome-based billing on Stripe.</li>
     </ul>
   </div>
 
   <div class="job">
     <div class="top">
       <h3>Founder &amp; CEO, <span class="co">Solisa AI</span></h3>
-      <div class="when">Feb 2024 – Jan 2026 · Palo Alto, CA</div>
+      <div class="when">Feb 2024 to Jan 2026 · Palo Alto, CA</div>
     </div>
     <div class="blurb">Venture-backed AI platform automating the insurance sales workflow end to end: AI lead sourcing, follow-up, retention, and automated compliance.</div>
     <ul>
       <li>Grew revenue from <strong>$0 to roughly $2.5M cumulative in 18 months</strong>; <strong>$1.4M in signed enterprise contracts</strong> plus <strong>$19M in signed letters of intent</strong> ($14.4M expansion pipeline).</li>
       <li>Owned the full GTM motion from first conversation to signed contract and <strong>personally closed every enterprise account</strong>: US Health Advisors (a UnitedHealthcare company, ~$914K), Northwestern Mutual, Farmers Insurance, and Knickerbocker &amp; Associates; pilots with AREAA and AIRE Advisors.</li>
-      <li>Ran founder-led, bottom-up selling: discovered frontline pain with agents and team leaders, built a custom solution and MVP, then closed regional executives who arrived already referenced by their own teams. Landed the first major contract via a live 3-hour working session with a regional VP and ~20 sales leaders that converted to a contract plus implementation fee.</li>
-      <li>Delivered customer outcomes of <strong>5x lead-to-policy conversion</strong> (0.7% to ~3.5%), +40% agent revenue, and retention extended from ~3 months to 6–12 months.</li>
+      <li>Ran founder-led, bottom-up selling: discovered frontline pain with agents and team leaders, built a custom solution and MVP, then closed regional executives who arrived already referenced by their own teams.</li>
+      <li>Delivered customer outcomes of <strong>5x lead-to-policy conversion</strong> (0.7% to ~3.5%), +40% agent revenue, and retention extended from ~3 months to 6 to 12 months.</li>
       <li>Built and led a <strong>12-person team</strong> (9 engineering, 3 go-to-market); set product roadmap, pricing, and packaging. Recruited Henry Loubet (former CEO, UnitedHealthcare; President, Health Net) as strategic advisor.</li>
       <li>Architected the AI systems and led full-stack development; built the insurance AI lead-generation system and a real estate seller-prediction model at <strong>76% accuracy</strong>.</li>
       <li>Competition record: Venture Devils funding winner (2x), ASU Lab to Launch winner, Tech Devils Judge's Choice Award, top 10 at Startup World Cup Arizona, ASU InvestU final four.</li>
@@ -160,13 +193,13 @@
   <div class="job">
     <div class="top">
       <h3>Software Engineer, <span class="co">Renesas Electronics</span></h3>
-      <div class="when">May 2021 – Aug 2025 · Chandler, AZ</div>
+      <div class="when">May 2021 to Aug 2025 · Chandler, AZ</div>
     </div>
     <ul>
       <li>Led <strong>One Flow</strong>, a unified workflow and database platform that harmonized operations across <strong>7 major acquisitions ranging from $100M to $1.4B</strong>, replacing fragmented processes with one global knowledge platform. Coordinated teams in the US, Japan, UK, Germany, and Norway.</li>
       <li>Developed an AI-driven predictive system that <strong>forecasts semiconductor manufacturing errors up to 6 months in advance</strong>, reducing fab risk.</li>
       <li>Built <strong>Florence</strong>, an internal AI copilot using LangChain, Llama, and RAG that helps <strong>1,000+ engineers</strong> find documents and synthesize technical data across the merged companies.</li>
-      <li>Built <strong>SWIFT</strong>, an internal diagramming and documentation tool that replaced Microsoft Visio and SharePoint, plus Jira and Excel automations that improved project manager productivity and visibility.</li>
+      <li>Built <strong>SWIFT</strong>, an internal diagramming and documentation tool that replaced Microsoft Visio and SharePoint, plus Jira and Excel automations that improved project manager productivity.</li>
       <li>Worked with the enterprise sales team to facilitate and close the Method Park Stages and Viflow deals.</li>
     </ul>
   </div>
@@ -174,7 +207,7 @@
   <div class="job">
     <div class="top">
       <h3>Co-Founder, <span class="co">Accompanian</span> <span class="tag">ACQUIRED</span></h3>
-      <div class="when">Oct 2023 – May 2024 · Tempe, AZ</div>
+      <div class="when">Oct 2023 to May 2024 · Tempe, AZ</div>
     </div>
     <ul>
       <li>Built a habit tracking and mental wellness app to <strong>4,000+ active users</strong>. Won ASU Venture Devils funding.</li>
@@ -186,42 +219,40 @@
   <div class="job">
     <div class="top">
       <h3>Ambassador, <span class="co">Silicon Oasis</span></h3>
-      <div class="when">Feb 2025 – Dec 2025 · Arizona</div>
+      <div class="when">Feb 2025 to Dec 2025 · Arizona</div>
     </div>
-    <ul>
-      <li>Represented Arizona for AI; mentored AI startups and builders across the state.</li>
-    </ul>
+    <ul><li>Represented Arizona for AI; mentored AI startups and builders across the state.</li></ul>
   </div>
 
-  <h2 class="sec">Earlier Experience</h2>
+  <h2 class="sec">Earlier</h2>
   <ul>
-    <li><b>Founder, K Productions</b> — Arizona (2018). Web design, social media, and advertising for local businesses; <b>$100K ARR</b> while still in high school.</li>
-    <li><b>Software Engineer Intern, Dialog Semiconductor</b> — Chandler, AZ (2021).</li>
+    <li><b>Founder, K Productions</b>, Arizona (2018). Web design, social media, and advertising for local businesses; <b>$100K ARR</b> while still in high school.</li>
+    <li><b>Software Engineer Intern, Dialog Semiconductor</b>, Chandler, AZ (2021).</li>
     <li><b>Junior Software Developer, tokketok llc</b> (2020). Java, HTML5.</li>
-    <li><b>Salesman, Mocsin Inc.</b> — Mesa, AZ (2020–2021). Top 3 in sales within 3 months.</li>
-    <li><b>Vietnamese Translator / Information &amp; Referral Specialist, Citrus Medical Clinic</b> — Chandler, AZ (2019–2020).</li>
-    <li><b>Dignity Health, Mercy Gilbert</b> — summer roles 2015–2018 (Accounting Assistant, Resources Manager, ICU Assistant, ER Assistant).</li>
+    <li><b>Salesman, Mocsin Inc.</b>, Mesa, AZ (2020 to 2021). Top 3 in sales within 3 months.</li>
+    <li><b>Vietnamese Translator / Information &amp; Referral Specialist, Citrus Medical Clinic</b>, Chandler, AZ (2019 to 2020).</li>
+    <li><b>Dignity Health, Mercy Gilbert</b>, summer roles 2015 to 2018 (Accounting Assistant, Resources Manager, ICU Assistant, ER Assistant).</li>
   </ul>
 
   <h2 class="sec">Technical Skills</h2>
   <div class="skill"><div class="k">Languages</div><div class="v">Python, JavaScript/TypeScript (Node), Java, C++, SQL</div></div>
-  <div class="skill"><div class="k">AI / ML</div><div class="v">LangChain, RAG pipelines, LLM orchestration and routing (Anthropic, OpenAI, Google, DeepSeek, xAI), MCP tool servers, TensorFlow, PyTorch, prompt and context engineering</div></div>
+  <div class="skill"><div class="k">AI / ML</div><div class="v">LangChain, RAG pipelines, LLM orchestration and routing (Anthropic, OpenAI, Google, DeepSeek, xAI), MCP tool servers, on-device computer vision, TensorFlow, PyTorch, prompt and context engineering</div></div>
   <div class="skill"><div class="k">Data</div><div class="v">PostgreSQL/Supabase, schema migrations, ETL scripting in Python, revenue and event pipelines, dashboarding</div></div>
   <div class="skill"><div class="k">Cloud &amp; DevOps</div><div class="v">AWS, Azure, GCP, serverless and event-driven patterns, Vercel, GitHub Actions CI/CD, PM2, Docker, Playwright testing</div></div>
   <div class="skill"><div class="k">Product &amp; Delivery</div><div class="v">Proposal and SOW drafting, estimation and pricing, Stripe billing, Agile/Scrum, JIRA, executive presentation, cross-time-zone stakeholder management</div></div>
 
   <h2 class="sec">Education</h2>
-  <div class="two">
-    <div class="edu-block">
+  <div class="two edu">
+    <div>
       <h4>M.S., Robotics &amp; Autonomous Systems</h4>
       <div class="sub">Arizona State University</div>
     </div>
-    <div class="edu-block">
+    <div>
       <h4>B.S., Computer Science</h4>
       <div class="sub">Arizona State University, Ira A. Fulton Schools of Engineering</div>
       <p>GPA 3.7, Dean's List. Minors in Technological Entrepreneurship &amp; Management and Business.</p>
     </div>
-    <div class="edu-block">
+    <div>
       <h4>Graduate Business Studies</h4>
       <div class="sub">Stanford University, Graduate School of Business (attended, no degree conferred)</div>
     </div>

@@ -3,421 +3,514 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kelvin Tran — Founder & AI Engineer</title>
-<meta name="description" content="Kelvin Tran: four-time founder (one exit). Running DoorStopper AI and Kijestic. Previously founded Solisa AI, a venture-backed insurance AI platform scaled to ~$2.5M cumulative revenue.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<title>Kelvin Tran / Founder &amp; AI Engineer</title>
+<meta name="description" content="Kelvin Tran: founder and AI engineer. Runs Kijestic AI, Dermetry AI, and Dasom Essence. Previously founded Solisa AI, a venture-backed insurance AI platform scaled to roughly $2.5M cumulative revenue.">
+<meta property="og:title" content="Kelvin Tran / Founder &amp; AI Engineer">
+<meta property="og:description" content="One operator, a fleet of AI agents, three companies. Previously founded Solisa AI and Accompanian (acquired).">
+<meta name="theme-color" content="#050607">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23050607'/><path d='M9 7v18M9 16l9-9M9 16l10 9' stroke='%232FE6D0' stroke-width='2.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --bg: #0B0C10;
-    --bg2: #0F1117;
-    --surface: #13151D;
-    --card: rgba(255,255,255,0.025);
-    --card-h: rgba(255,255,255,0.05);
-    --border: rgba(255,255,255,0.08);
-    --border-h: rgba(255,255,255,0.16);
-    --text: #EDEEF2;
-    --muted: #9BA1AE;
-    --dim: #686E7B;
-    --accent: #8B9DFF;
-    --accent-2: #B7C2FF;
-    --green: #4ADE80;
-    --serif: 'Instrument Serif', Georgia, serif;
-    --sans: 'Inter', system-ui, sans-serif;
+    --ink: #050607;
+    --carbon: #0A0D0F;
+    --graphite: #12171A;
+    --turq: #2FE6D0;
+    --turq-deep: #0FB9A8;
+    --wash: rgba(47,230,208,0.08);
+    --bone: #E9EFEE;
+    --ash: #93A3A1;
+    --slate: #5E6C6B;
+    --line: rgba(233,239,238,0.09);
+    --line-hi: rgba(47,230,208,0.38);
+
+    --display: 'Space Grotesk', system-ui, sans-serif;
+    --body: 'Inter', system-ui, sans-serif;
     --mono: 'JetBrains Mono', ui-monospace, monospace;
+
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --shell: min(1180px, 92vw);
   }
 
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
   body {
-    background: var(--bg); color: var(--text);
-    font-family: var(--sans); font-size: 16px; line-height: 1.6;
+    background: var(--ink); color: var(--bone);
+    font-family: var(--body); font-size: 16px; line-height: 1.65;
     overflow-x: hidden;
   }
-  ::selection { background: rgba(139,157,255,.3); }
+  /* film grain keeps large flat blacks from reading as a default template */
+  /* plain opacity, no blend mode: a full-viewport mix-blend layer forces the
+     compositor to re-blend every frame the canvas paints. On near-black the
+     visual result is the same and it costs nothing. */
+  body::after {
+    content: ''; position: fixed; inset: 0; z-index: 9998; pointer-events: none;
+    opacity: .05;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+  }
+  ::selection { background: var(--turq); color: var(--ink); }
+  a { color: inherit; text-decoration: none; }
+  :focus-visible { outline: 2px solid var(--turq); outline-offset: 3px; border-radius: 3px; }
 
-  a { color: inherit; }
-  .container { max-width: 1060px; margin: 0 auto; padding: 0 24px; }
+  .shell { width: var(--shell); margin: 0 auto; }
+  button, a { cursor: pointer; }
 
-  .label {
+  /* ---------- custom cursor ---------- */
+  .cur, .cur-ring { position: fixed; top: 0; left: 0; z-index: 9999; pointer-events: none; border-radius: 50%; }
+  .cur { width: 6px; height: 6px; background: var(--turq); margin: -3px 0 0 -3px; will-change: transform; }
+  .cur-ring {
+    width: 34px; height: 34px; margin: -17px 0 0 -17px; will-change: transform;
+    border: 1px solid rgba(47,230,208,.5);
+    transition: width .25s var(--ease), height .25s var(--ease), margin .25s var(--ease), background .25s var(--ease), border-color .25s var(--ease);
+  }
+  .cur-ring.on {
+    width: 62px; height: 62px; margin: -31px 0 0 -31px;
+    background: var(--wash); border-color: var(--turq);
+  }
+  @media (hover: none), (pointer: coarse) { .cur, .cur-ring { display: none; } }
+
+  /* ---------- type ---------- */
+  .eyebrow {
     font-family: var(--mono); font-size: 11px; font-weight: 500;
-    letter-spacing: .18em; text-transform: uppercase; color: var(--accent);
+    letter-spacing: .2em; text-transform: uppercase; color: var(--turq);
+    display: flex; align-items: center; gap: 12px;
   }
-  .section-title {
-    font-family: var(--serif); font-weight: 400;
-    font-size: clamp(34px, 4.5vw, 56px); line-height: 1.05;
-    letter-spacing: -.01em; margin: .35em 0 .6em;
+  .eyebrow::before {
+    content: ''; width: 26px; height: 1px; background: var(--turq); opacity: .6;
   }
-  .section-title em { font-style: italic; color: var(--accent-2); }
-  section { padding: 96px 0; position: relative; }
+  h2.title {
+    font-family: var(--display); font-weight: 700;
+    font-size: clamp(32px, 4.6vw, 60px); line-height: 1.02; letter-spacing: -.035em;
+    margin: .4em 0 .5em; text-wrap: balance;
+  }
+  h2.title .q { color: var(--turq); }
+  section { padding: clamp(78px, 10vw, 132px) 0; position: relative; }
 
-  /* grain + glow */
-  .glow {
-    position: absolute; border-radius: 50%; filter: blur(120px);
-    opacity: .1; pointer-events: none; z-index: 0;
-    background: var(--accent);
-  }
-
-  /* NAV */
+  /* ---------- nav ---------- */
   nav {
-    position: fixed; inset: 0 0 auto 0; z-index: 100;
-    background: rgba(11,12,16,.82); backdrop-filter: blur(14px);
-    border-bottom: 1px solid var(--border);
+    position: fixed; inset: 0 0 auto 0; z-index: 120;
+    background: rgba(5,6,7,.72); backdrop-filter: blur(18px) saturate(140%);
+    border-bottom: 1px solid var(--line);
   }
-  nav .inner {
-    max-width: 1060px; margin: 0 auto; padding: 0 24px;
-    height: 60px; display: flex; align-items: center; justify-content: space-between;
+  nav .inner { width: var(--shell); margin: 0 auto; height: 62px; display: flex; align-items: center; justify-content: space-between; }
+  .brand { display: flex; align-items: center; gap: 11px; font-family: var(--display); font-weight: 700; font-size: 15px; letter-spacing: -.02em; }
+  .brand svg { width: 24px; height: 24px; display: block; }
+  .brand em { font-style: normal; color: var(--slate); font-weight: 500; }
+  .navlinks { display: flex; align-items: center; gap: 30px; }
+  .navlinks a {
+    font-family: var(--mono); font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--ash); transition: color .2s var(--ease); position: relative;
   }
-  nav .logo { font-weight: 800; font-size: 16px; letter-spacing: -.02em; text-decoration: none; }
-  nav .logo span { color: var(--accent); }
-  nav .links { display: flex; gap: 1.8em; align-items: center; }
-  nav .links a {
-    text-decoration: none; color: var(--muted); font-size: 13px; font-weight: 500;
-    transition: color .15s;
+  .navlinks a::after {
+    content: ''; position: absolute; left: 0; bottom: -6px; width: 100%; height: 1px;
+    background: var(--turq); transform: scaleX(0); transform-origin: left;
+    transition: transform .3s var(--ease);
   }
-  nav .links a:hover { color: var(--text); }
-  nav .links a.btn-resume {
-    color: var(--bg); background: var(--text); padding: 7px 14px; border-radius: 8px;
-    font-weight: 600; transition: background .15s;
+  .navlinks a:hover { color: var(--bone); }
+  .navlinks a:hover::after { transform: scaleX(1); }
+  .navlinks a.cta {
+    color: var(--ink); background: var(--turq); padding: 8px 15px; border-radius: 7px; font-weight: 500;
+    transition: background .2s var(--ease), transform .2s var(--ease);
   }
-  nav .links a.btn-resume:hover { background: var(--accent-2); }
-  @media (max-width: 720px) { nav .links a:not(.btn-resume) { display: none; } }
+  .navlinks a.cta::after { display: none; }
+  .navlinks a.cta:hover { background: #6BF0E0; transform: translateY(-1px); }
+  @media (max-width: 800px) { .navlinks a:not(.cta) { display: none; } }
 
-  /* HERO */
-  #hero { padding: 170px 0 90px; }
-  .hero-grid {
-    display: grid; grid-template-columns: 1fr auto; gap: 56px; align-items: center;
-    position: relative; z-index: 1;
+  /* ---------- hero ---------- */
+  #hero { padding-top: clamp(120px, 16vh, 180px); padding-bottom: clamp(60px, 8vw, 90px); }
+  .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(30px, 5vw, 70px); align-items: center; }
+  @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; gap: 46px; } }
+
+  h1 {
+    font-family: var(--display); font-weight: 700;
+    font-size: clamp(40px, 6.4vw, 88px); line-height: .98; letter-spacing: -.045em;
+    margin: 26px 0 0;
   }
-  @media (max-width: 820px) { .hero-grid { grid-template-columns: 1fr; } }
-  .hero-photo {
-    width: 240px; height: 240px; border-radius: 24px;
-    object-fit: cover; object-position: top center;
-    border: 1px solid var(--border-h);
-    box-shadow: 0 24px 80px rgba(139,157,255,.14);
-  }
-  #hero h1 {
-    font-family: var(--serif); font-weight: 400;
-    font-size: clamp(42px, 6vw, 78px); line-height: 1.02; letter-spacing: -.015em;
-    margin: .3em 0 .4em;
-  }
-  #hero h1 em { font-style: italic; color: var(--accent-2); }
-  .hero-sub {
-    color: var(--muted); font-size: clamp(16px, 1.6vw, 19px); line-height: 1.65;
-    max-width: 600px;
-  }
-  .hero-sub strong { color: var(--text); font-weight: 600; }
-  .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+  h1 .line { display: block; overflow: hidden; }
+  h1 .line > span { display: block; transform: translateY(105%); animation: rise .95s var(--ease) forwards; }
+  h1 .line:nth-child(2) > span { animation-delay: .1s; }
+  h1 .line:nth-child(3) > span { animation-delay: .2s; }
+  @keyframes rise { to { transform: translateY(0); } }
+  h1 .q { color: var(--turq); }
+
+  .lede { color: var(--ash); font-size: clamp(15.5px, 1.5vw, 18px); max-width: 52ch; margin-top: 26px; }
+  .lede strong { color: var(--bone); font-weight: 600; }
+
+  .ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 32px; }
   .btn {
-    display: inline-block; text-decoration: none; font-size: 14px; font-weight: 600;
-    padding: 11px 20px; border-radius: 10px; transition: all .15s;
+    font-size: 14px; font-weight: 600; padding: 12px 22px; border-radius: 9px;
+    border: 1px solid transparent; transition: all .22s var(--ease); display: inline-flex; align-items: center; gap: 9px;
   }
-  .btn-primary { background: var(--accent); color: #0B0C10; }
-  .btn-primary:hover { background: var(--accent-2); }
-  .btn-ghost { border: 1px solid var(--border-h); color: var(--text); }
-  .btn-ghost:hover { border-color: var(--accent); color: var(--accent-2); }
+  .btn-solid { background: var(--turq); color: var(--ink); }
+  .btn-solid:hover { background: #6BF0E0; transform: translateY(-2px); box-shadow: 0 10px 34px rgba(47,230,208,.22); }
+  .btn-line { border-color: var(--line); color: var(--bone); }
+  .btn-line:hover { border-color: var(--turq); color: var(--turq); transform: translateY(-2px); }
 
-  .hero-stats {
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
-    background: var(--border); border: 1px solid var(--border); border-radius: 16px;
-    overflow: hidden; margin-top: 64px; position: relative; z-index: 1;
+  /* portrait + agent network */
+  .orbit { position: relative; aspect-ratio: 1; width: 100%; max-width: 440px; margin-inline: auto; contain: layout paint; }
+  .orbit canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .orbit .me {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);
+    width: 41%; aspect-ratio: 1; border-radius: 50%; object-fit: cover;
+    border: 1px solid rgba(47,230,208,.45);
+    box-shadow: 0 0 0 7px rgba(5,6,7,.92), 0 0 46px rgba(47,230,208,.2);
   }
-  @media (max-width: 820px) { .hero-stats { grid-template-columns: repeat(2, 1fr); } }
-  .stat { background: var(--bg2); padding: 26px 24px; }
-  .stat .num {
-    font-family: var(--serif); font-size: clamp(28px, 3vw, 40px); line-height: 1;
-    color: var(--text);
-  }
-  .stat .num span { color: var(--accent); }
-  .stat .desc { color: var(--dim); font-size: 12.5px; margin-top: 10px; line-height: 1.5; }
-
-  /* NOW */
-  .now-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; position: relative; z-index: 1; }
-  @media (max-width: 820px) { .now-grid { grid-template-columns: 1fr; } }
-  .venture {
-    background: var(--card); border: 1px solid var(--border); border-radius: 18px;
-    padding: 34px 32px; transition: border-color .2s, background .2s;
-  }
-  .venture:hover { border-color: var(--border-h); background: var(--card-h); }
-  .venture .head { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-  .venture h3 { font-size: 22px; font-weight: 700; letter-spacing: -.02em; }
-  .venture .role { color: var(--dim); font-size: 13px; margin-top: 3px; }
-  .badge {
-    font-family: var(--mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase;
-    padding: 5px 10px; border-radius: 99px; white-space: nowrap;
-  }
-  .badge.live { color: var(--green); border: 1px solid rgba(74,222,128,.35); background: rgba(74,222,128,.08); }
-  .badge.accent { color: var(--accent); border: 1px solid rgba(139,157,255,.35); background: rgba(139,157,255,.08); }
-  .venture p { color: var(--muted); font-size: 14.5px; margin-top: 16px; }
-  .venture ul { margin: 16px 0 0; padding: 0; list-style: none; }
-  .venture li {
-    color: var(--muted); font-size: 14px; padding: 8px 0 8px 22px; position: relative;
-    border-top: 1px solid var(--border);
-  }
-  .venture li::before { content: "→"; position: absolute; left: 0; color: var(--accent); }
-  .venture li strong { color: var(--text); font-weight: 600; }
-
-  /* TIMELINE */
-  .timeline { position: relative; z-index: 1; }
-  .t-item {
-    display: grid; grid-template-columns: 180px 1fr; gap: 32px;
-    padding: 34px 0; border-top: 1px solid var(--border);
-  }
-  @media (max-width: 720px) { .t-item { grid-template-columns: 1fr; gap: 8px; } }
-  .t-when { font-family: var(--mono); font-size: 12px; color: var(--dim); padding-top: 5px; line-height: 1.8; }
-  .t-when .tag { color: var(--green); }
-  .t-body h3 { font-size: 20px; font-weight: 700; letter-spacing: -.02em; }
-  .t-body .sub { color: var(--dim); font-size: 13.5px; margin: 2px 0 12px; }
-  .t-body p { color: var(--muted); font-size: 14.5px; margin-bottom: 10px; }
-  .t-body ul { padding: 0; list-style: none; }
-  .t-body li { color: var(--muted); font-size: 14px; padding: 5px 0 5px 20px; position: relative; }
-  .t-body li::before { content: "·"; position: absolute; left: 4px; color: var(--accent); font-weight: 800; }
-  .t-body li strong { color: var(--text); font-weight: 600; }
-  .clients { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
-  .clients span {
-    font-size: 12.5px; color: var(--muted); border: 1px solid var(--border);
-    padding: 6px 12px; border-radius: 99px;
+  .orbit-cap {
+    position: absolute; left: 50%; bottom: -6px; transform: translateX(-50%);
+    font-family: var(--mono); font-size: 10px; letter-spacing: .16em; text-transform: uppercase;
+    color: var(--slate); white-space: nowrap;
   }
 
-  /* STORY */
-  #story { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-  .story-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 56px; position: relative; z-index: 1; }
-  @media (max-width: 820px) { .story-grid { grid-template-columns: 1fr; } }
-  .story-text p { color: var(--muted); font-size: 15.5px; margin-bottom: 1.2em; }
-  .story-text strong { color: var(--text); font-weight: 600; }
-  .beliefs { display: grid; gap: 14px; align-content: start; }
-  .belief {
-    border: 1px solid var(--border); border-radius: 14px; padding: 18px 20px;
-    background: var(--card);
+  /* ---------- stats ---------- */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); }
+  @media (max-width: 860px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+  .stat { padding: 30px 26px 30px 0; border-right: 1px solid var(--line); }
+  .stat:last-child { border-right: 0; }
+  @media (max-width: 860px) {
+    .stat:nth-child(2n) { border-right: 0; }
+    .stat:nth-child(n+3) { border-top: 1px solid var(--line); }
   }
-  .belief h4 { font-size: 14.5px; font-weight: 700; }
-  .belief p { color: var(--dim); font-size: 13px; margin-top: 4px; }
-
-  /* EDUCATION */
-  .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; position: relative; z-index: 1; }
-  @media (max-width: 820px) { .edu-grid { grid-template-columns: 1fr; } }
-  .edu-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 26px 28px; }
-  .edu-card h4 { font-size: 16px; font-weight: 700; }
-  .edu-card .sub { color: var(--dim); font-size: 13px; margin-top: 3px; }
-  .edu-card p { color: var(--muted); font-size: 13.5px; margin-top: 10px; }
-  .honors { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px; }
-  .honors span {
-    font-size: 12.5px; color: var(--muted); border: 1px solid var(--border);
-    padding: 7px 13px; border-radius: 99px; background: var(--card);
+  .stat .n {
+    font-family: var(--display); font-weight: 700; font-size: clamp(30px, 3.3vw, 44px);
+    letter-spacing: -.03em; line-height: 1;
   }
+  .stat .n i { font-style: normal; color: var(--turq); }
+  .stat .d { color: var(--slate); font-size: 12.5px; line-height: 1.55; margin-top: 12px; max-width: 26ch; }
 
-  /* SKILLS */
-  .skill-rows { position: relative; z-index: 1; }
-  .skill-row {
-    display: grid; grid-template-columns: 200px 1fr; gap: 24px;
-    padding: 18px 0; border-top: 1px solid var(--border); align-items: baseline;
+  /* ---------- ventures ---------- */
+  .vgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  @media (max-width: 980px) { .vgrid { grid-template-columns: 1fr; } }
+  .v {
+    position: relative; background: var(--carbon); border: 1px solid var(--line);
+    border-radius: 16px; padding: 30px 28px 28px; overflow: hidden;
+    transition: border-color .3s var(--ease), transform .3s var(--ease);
   }
-  @media (max-width: 720px) { .skill-row { grid-template-columns: 1fr; gap: 4px; } }
-  .skill-row .k { font-family: var(--mono); font-size: 12px; color: var(--accent); letter-spacing: .08em; text-transform: uppercase; }
-  .skill-row .v { color: var(--muted); font-size: 14.5px; }
-
-  /* CONTACT */
-  #contact { text-align: center; padding: 130px 0 110px; }
-  #contact .section-title { font-size: clamp(38px, 5vw, 64px); }
-  #contact p { color: var(--muted); max-width: 480px; margin: 0 auto 32px; }
-  .contact-links { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-
-  footer {
-    border-top: 1px solid var(--border); padding: 28px 0; text-align: center;
-    color: var(--dim); font-size: 13px;
+  .v::before {
+    content: ''; position: absolute; inset: 0; opacity: 0; transition: opacity .35s var(--ease);
+    background: radial-gradient(420px circle at var(--mx,50%) var(--my,0%), rgba(47,230,208,.13), transparent 62%);
   }
-  footer a { color: var(--muted); text-decoration: none; }
-  footer a:hover { color: var(--text); }
+  .v:hover { border-color: var(--line-hi); transform: translateY(-4px); }
+  .v:hover::before { opacity: 1; }
+  .v > * { position: relative; }
+  .v .vtop { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+  .v h3 { font-family: var(--display); font-weight: 700; font-size: 21px; letter-spacing: -.02em; }
+  .v .role { font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--slate); margin-top: 7px; }
+  .pill {
+    font-family: var(--mono); font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase;
+    padding: 5px 9px; border-radius: 99px; white-space: nowrap;
+    color: var(--turq); border: 1px solid rgba(47,230,208,.32); background: var(--wash);
+  }
+  .v p { color: var(--ash); font-size: 14px; margin-top: 16px; }
+  .v ul { list-style: none; margin-top: 18px; }
+  .v li { color: var(--ash); font-size: 13.5px; padding: 9px 0 9px 19px; position: relative; border-top: 1px solid var(--line); }
+  .v li::before { content: ''; position: absolute; left: 0; top: 17px; width: 7px; height: 1px; background: var(--turq); }
+  .v li strong { color: var(--bone); font-weight: 600; }
+
+  /* ---------- timeline ---------- */
+  .tl { position: relative; padding-left: 30px; }
+  @media (max-width: 720px) { .tl { padding-left: 20px; } }
+  .tl .rail { position: absolute; left: 0; top: 8px; bottom: 8px; width: 1px; background: var(--line); }
+  .tl .rail i { position: absolute; inset: 0 auto 0 0; width: 1px; height: 0; background: linear-gradient(var(--turq), var(--turq-deep)); }
+  .t { position: relative; padding: 30px 0; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 178px 1fr; gap: 30px; }
+  .t:last-child { border-bottom: 0; }
+  @media (max-width: 780px) { .t { grid-template-columns: 1fr; gap: 10px; } }
+  .t::before {
+    content: ''; position: absolute; left: -34px; top: 40px; width: 7px; height: 7px; border-radius: 50%;
+    background: var(--ink); border: 1px solid var(--slate); transition: all .3s var(--ease);
+  }
+  @media (max-width: 720px) { .t::before { left: -24px; } }
+  .t:hover::before { background: var(--turq); border-color: var(--turq); box-shadow: 0 0 0 5px var(--wash); }
+  .t .when { font-family: var(--mono); font-size: 11.5px; color: var(--slate); line-height: 1.9; }
+  .t .when b { display: block; color: var(--turq); font-weight: 500; letter-spacing: .1em; font-size: 10px; text-transform: uppercase; }
+  .t h3 { font-family: var(--display); font-weight: 700; font-size: 20px; letter-spacing: -.02em; }
+  .t .sub { color: var(--slate); font-size: 13px; margin: 4px 0 13px; }
+  .t ul { list-style: none; }
+  .t li { color: var(--ash); font-size: 14px; padding: 4px 0 4px 17px; position: relative; }
+  .t li::before { content: ''; position: absolute; left: 0; top: 13px; width: 6px; height: 1px; background: var(--slate); }
+  .t li strong { color: var(--bone); font-weight: 600; }
+  .logos { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
+  .logos span {
+    font-family: var(--mono); font-size: 11px; color: var(--ash);
+    border: 1px solid var(--line); padding: 6px 11px; border-radius: 6px;
+    transition: border-color .25s var(--ease), color .25s var(--ease);
+  }
+  .logos span:hover { border-color: var(--line-hi); color: var(--turq); }
+
+  /* ---------- story ---------- */
+  #story { background: var(--carbon); border-block: 1px solid var(--line); }
+  .sgrid { display: grid; grid-template-columns: 1.35fr 1fr; gap: clamp(30px, 5vw, 64px); }
+  @media (max-width: 900px) { .sgrid { grid-template-columns: 1fr; } }
+  .sgrid p { color: var(--ash); font-size: 15.5px; margin-bottom: 1.15em; }
+  .sgrid p strong { color: var(--bone); font-weight: 600; }
+  .creed { display: grid; gap: 12px; align-content: start; }
+  .cd { border: 1px solid var(--line); border-radius: 12px; padding: 17px 19px; background: var(--ink); transition: border-color .25s var(--ease); }
+  .cd:hover { border-color: var(--line-hi); }
+  .cd h4 { font-size: 14px; font-weight: 600; display: flex; align-items: center; gap: 9px; }
+  .cd h4::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--turq); flex: none; }
+  .cd p { color: var(--slate); font-size: 12.5px; margin: 6px 0 0; }
+
+  /* ---------- education ---------- */
+  .egrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  @media (max-width: 780px) { .egrid { grid-template-columns: 1fr; } }
+  .e { border: 1px solid var(--line); border-radius: 13px; padding: 24px; transition: border-color .25s var(--ease); }
+  .e:hover { border-color: var(--line-hi); }
+  .e h4 { font-size: 15.5px; font-weight: 600; }
+  .e .sub { color: var(--slate); font-size: 12.5px; margin-top: 4px; }
+  .e p { color: var(--ash); font-size: 13px; margin-top: 9px; }
+  .honors { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 22px; }
+  .honors span { font-family: var(--mono); font-size: 11px; color: var(--ash); border: 1px solid var(--line); padding: 7px 12px; border-radius: 6px; }
+
+  /* ---------- skills ---------- */
+  .krow { display: grid; grid-template-columns: 190px 1fr; gap: 26px; padding: 16px 0; border-top: 1px solid var(--line); align-items: baseline; }
+  @media (max-width: 720px) { .krow { grid-template-columns: 1fr; gap: 4px; } }
+  .krow .k { font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--turq); }
+  .krow .val { color: var(--ash); font-size: 14.5px; }
+
+  /* ---------- contact ---------- */
+  #contact { text-align: center; }
+  #contact h2.title { font-size: clamp(38px, 6vw, 78px); }
+  #contact .eyebrow { justify-content: center; }
+  #contact p { color: var(--ash); max-width: 46ch; margin: 0 auto 34px; }
+  .clinks { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  footer { border-top: 1px solid var(--line); padding: 26px 0; }
+  .frow { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-family: var(--mono); font-size: 11px; color: var(--slate); letter-spacing: .06em; }
+  .frow a:hover { color: var(--turq); }
+
+  /* ---------- reveal ---------- */
+  .rv { opacity: 0; transform: translateY(22px); transition: opacity .75s var(--ease), transform .75s var(--ease); }
+  .rv.in { opacity: 1; transform: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+    h1 .line > span { transform: none; }
+    .rv { opacity: 1; transform: none; }
+    .cur, .cur-ring { display: none; }
+  }
 </style>
 </head>
 <body>
 
+<div class="cur" aria-hidden="true"></div>
+<div class="cur-ring" aria-hidden="true"></div>
+
 <nav>
   <div class="inner">
-    <a class="logo" href="#">Kelvin<span> Tran</span></a>
-    <div class="links">
+    <a class="brand" href="#" aria-label="Kelvin Tran, home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0A0D0F" stroke="rgba(47,230,208,.3)"/><path d="M10 8v16M10 16l8-8M10 16l9 8" stroke="#2FE6D0" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Kelvin Tran <em>/ founder</em>
+    </a>
+    <div class="navlinks">
       <a href="#now">Now</a>
-      <a href="#record">Track Record</a>
+      <a href="#record">Record</a>
       <a href="#story">Story</a>
-      <a href="#education">Education</a>
       <a href="#contact">Contact</a>
-      <a class="btn-resume" href="resume.html">Resume</a>
+      <a class="cta" href="resume.html">Resume</a>
     </div>
   </div>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
-  <div class="glow" style="width:500px;height:500px;top:-120px;right:-100px;"></div>
-  <div class="container">
+  <div class="shell">
     <div class="hero-grid">
       <div>
-        <div class="label">Gilbert, Arizona · Founder & AI Engineer</div>
-        <h1>I design, build, sell, and operate AI products <em>end to end.</em></h1>
-        <p class="hero-sub">
-          Four companies founded, one exit. Today I run <strong>DoorStopper AI</strong>,
-          a revenue-positive AI property platform, and <strong>Kijestic</strong>, where one
-          human and a fleet of AI agents operate real businesses for real clients.
+        <div class="eyebrow">Gilbert, Arizona &nbsp;/&nbsp; Founder &amp; AI Engineer</div>
+        <h1>
+          <span class="line"><span>I design, build,</span></span>
+          <span class="line"><span>sell and operate</span></span>
+          <span class="line"><span>AI products <em class="q">end to end.</em></span></span>
+        </h1>
+        <p class="lede">
+          One company acquired, one venture-backed and scaled to millions. Today I run three:
+          <strong>Kijestic AI</strong>, <strong>Dermetry AI</strong>, and <strong>Dasom Essence</strong>.
+          A fleet of AI agents does the work. I set the direction and close the deals.
         </p>
-        <div class="hero-ctas">
-          <a class="btn btn-primary" href="mailto:kelvintran1000@gmail.com">Get in touch</a>
-          <a class="btn btn-ghost" href="resume.html">View resume</a>
-          <a class="btn btn-ghost" href="https://linkedin.com/in/kelvintran888" target="_blank" rel="noopener">LinkedIn</a>
+        <div class="ctas">
+          <a class="btn btn-solid" href="mailto:kelvintran1000@gmail.com" data-cur>
+            Get in touch
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-line" href="resume.html" data-cur>View resume</a>
+          <a class="btn btn-line" href="https://linkedin.com/in/kelvintran888" target="_blank" rel="noopener" data-cur>LinkedIn</a>
         </div>
       </div>
-      <img class="hero-photo" src="photo.jpg" alt="Kelvin Tran">
-    </div>
 
-    <div class="hero-stats">
-      <div class="stat">
-        <div class="num">~$2.5M<span>+</span></div>
-        <div class="desc">Cumulative revenue scaled at Solisa AI, with $19M in signed letters of intent</div>
-      </div>
-      <div class="stat">
-        <div class="num">$52M</div>
-        <div class="desc">Assets under management reached at DoorStopper before its pivot to placement-first</div>
-      </div>
-      <div class="stat">
-        <div class="num">4<span> / </span>1</div>
-        <div class="desc">Companies founded / acquired, from a high school agency to venture-backed AI</div>
-      </div>
-      <div class="stat">
-        <div class="num">1,000<span>+</span></div>
-        <div class="desc">Renesas engineers using Florence, the internal AI copilot I built</div>
+      <div class="orbit" id="orbit">
+        <canvas id="net" aria-hidden="true"></canvas>
+        <img class="me" src="photo.jpg" alt="Kelvin Tran">
+        <div class="orbit-cap">one operator &nbsp;·&nbsp; many agents</div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- STATS -->
+<div class="shell">
+  <div class="stats rv">
+    <div class="stat">
+      <div class="n" data-count="2.5" data-pre="~$" data-post="M" data-dec="1">~$2.5M</div>
+      <div class="d">Cumulative revenue scaled at Solisa AI, plus $19M in signed letters of intent</div>
+    </div>
+    <div class="stat">
+      <div class="n" data-count="52" data-pre="$" data-post="M">$52M</div>
+      <div class="d">Assets under management reached at DoorStopper before its pivot</div>
+    </div>
+    <div class="stat">
+      <div class="n" data-count="3">3</div>
+      <div class="d">Companies I run today, operated with an AI agent fleet I built</div>
+    </div>
+    <div class="stat">
+      <div class="n" data-count="1000" data-post="+">1,000+</div>
+      <div class="d">Renesas engineers using Florence, the internal AI copilot I built</div>
+    </div>
+  </div>
+</div>
 
 <!-- NOW -->
 <section id="now">
-  <div class="container">
-    <div class="label">2026 · What I'm building now</div>
-    <h2 class="section-title">Two companies, <em>one operator.</em></h2>
-    <div class="now-grid">
+  <div class="shell">
+    <div class="eyebrow rv">01 &nbsp;/&nbsp; What I'm building now</div>
+    <h2 class="title rv">Three companies, <span class="q">one operator.</span></h2>
+    <div class="vgrid">
 
-      <div class="venture">
-        <div class="head">
+      <article class="v rv" data-tilt>
+        <div class="vtop">
           <div>
-            <h3>DoorStopper AI</h3>
-            <div class="role">Founder · Apr 2026 to present · Delaware C-Corp</div>
+            <h3>Kijestic AI</h3>
+            <div class="role">Founder · Feb 2026 to now</div>
           </div>
-          <span class="badge live">Revenue positive</span>
+          <span class="pill">Agent infra</span>
         </div>
-        <p>
-          AI tenant placement that grows into autonomous property management. I built the
-          platform solo: an AI leasing agent that answers inbound rental leads in under 60
-          seconds, books appointments around the clock, syndicates listings across platforms,
-          and bills on outcomes through Stripe.
-        </p>
+        <p>Cognitive infrastructure for AI agents: the right knowledge and skills, loaded at the exact moment an agent needs them. In practice it is a working one-human company.</p>
         <ul>
-          <li>Grew to <strong>$52M in assets under management</strong> before pivoting the model to placement-first.</li>
-          <li><strong>8 placements</strong> and <strong>3 signed licensed brokerage partnerships</strong> in the first 3 months.</li>
-          <li>I scope, price, and close every engagement, then own delivery. Currently raising a seed round.</li>
+          <li><strong>11 task-queue daemons</strong> with per-department routing, atomic claiming, and quality gates that block weak output before it ships.</li>
+          <li><strong>Multi-provider LLM routing</strong> across Anthropic, OpenAI, Google, DeepSeek and xAI with failover chains and per-call cost tracking.</li>
+          <li>Runs marketing, operations and outreach for <strong>7 client accounts</strong>.</li>
         </ul>
-      </div>
+      </article>
 
-      <div class="venture">
-        <div class="head">
+      <article class="v rv" data-tilt>
+        <div class="vtop">
           <div>
-            <h3>Kijestic</h3>
-            <div class="role">Founder · Feb 2026 to present</div>
+            <h3>Dermetry AI</h3>
+            <div class="role">Founder · Jun 2026 to now</div>
           </div>
-          <span class="badge accent">7 client accounts</span>
+          <span class="pill">Live &amp; paid</span>
         </div>
-        <p>
-          Cognitive infrastructure for AI agents: the right knowledge and skills, loaded at
-          the exact moment an agent needs them. In practice, Kijestic is a working one-human
-          company. A production fleet of 11 task-queue agents runs marketing, operations, and
-          outreach for client businesses while I set direction and close the deals.
-        </p>
+        <p>An AI skin analysis company. Computer vision scores skin on the user's own device in seconds and turns the result into practical guidance. The tagline is "Skin, measured."</p>
         <ul>
-          <li><strong>Production multi-agent platform</strong> with per-department routing, atomic task claiming, and quality gates that block weak output before it ships.</li>
-          <li><strong>Multi-provider LLM routing</strong> across Anthropic, OpenAI, Google, DeepSeek, and xAI with failover chains and per-call cost tracking.</li>
-          <li>Clients span med spa, beauty, real estate, K-beauty skincare, and consumer supplements.</li>
+          <li><strong>Face Verdict</strong> is live and taking payments: upload a photo, get your 8 best haircuts ranked and rendered on your own face with identity preserved.</li>
+          <li><strong>Dermetry Pro</strong> installs with one script tag and is running inside real med spa and beauty stores.</li>
+          <li>Processing is <strong>on-device and photos are never stored</strong>, which is the privacy wedge against the incumbents.</li>
         </ul>
-      </div>
+      </article>
+
+      <article class="v rv" data-tilt>
+        <div class="vtop">
+          <div>
+            <h3>Dasom Essence</h3>
+            <div class="role">Operating partner · Jun 2026 to now</div>
+          </div>
+          <span class="pill">DTC brand</span>
+        </div>
+        <p>A premium K-beauty skincare brand selling PDRN-based products direct to consumers. I run the brand end to end rather than advising it.</p>
+        <ul>
+          <li>Own <strong>growth, content, product and ecommerce operations</strong> across the full catalogue.</li>
+          <li>Built the <strong>reviews and trust system</strong>, the content engine, and the product page rebuild.</li>
+          <li>Applied the same agent fleet that runs Kijestic to a real consumer brand.</li>
+        </ul>
+      </article>
 
     </div>
   </div>
 </section>
 
-<!-- TRACK RECORD -->
+<!-- RECORD -->
 <section id="record">
-  <div class="glow" style="width:420px;height:420px;bottom:0;left:-160px;"></div>
-  <div class="container">
-    <div class="label">2018 to 2026 · Track record</div>
-    <h2 class="section-title">Every chapter <em>shipped.</em></h2>
-    <div class="timeline">
+  <div class="shell">
+    <div class="eyebrow rv">02 &nbsp;/&nbsp; 2018 to 2026</div>
+    <h2 class="title rv">Every chapter <span class="q">shipped.</span></h2>
 
-      <div class="t-item">
-        <div class="t-when">Feb 2024 – Jan 2026<br>Palo Alto, CA<br><span class="tag">VENTURE-BACKED</span></div>
-        <div class="t-body">
+    <div class="tl" id="tl">
+      <div class="rail"><i id="railfill"></i></div>
+
+      <div class="t rv">
+        <div class="when">Apr 2026 – Jun 2026<br>Chandler, AZ</div>
+        <div>
+          <h3>DoorStopper AI</h3>
+          <div class="sub">Founder · AI tenant placement and autonomous property management</div>
+          <ul>
+            <li>Reached <strong>$52M in assets under management</strong> before pivoting the model to placement-first.</li>
+            <li><strong>8 placements and 3 signed licensed brokerage partnerships</strong> within the first three months.</li>
+            <li>Built the platform solo: an AI leasing agent answering inbound rental leads in under 60 seconds, listing syndication, and outcome-based billing on Stripe.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="t rv">
+        <div class="when"><b>Venture-backed</b>Feb 2024 – Jan 2026<br>Palo Alto, CA</div>
+        <div>
           <h3>Solisa AI</h3>
-          <div class="sub">Founder & CEO · AI platform automating the insurance sales workflow end to end</div>
+          <div class="sub">Founder &amp; CEO · automating the insurance sales workflow end to end</div>
           <ul>
             <li>Grew revenue from <strong>$0 to roughly $2.5M cumulative in 18 months</strong>, with <strong>$1.4M in signed enterprise contracts</strong> and <strong>$19M in signed letters of intent</strong>.</li>
             <li>Owned the full go-to-market motion and <strong>personally closed every enterprise account</strong> through founder-led, bottom-up selling.</li>
             <li>Customer outcomes: <strong>5x lead-to-policy conversion</strong>, 40% higher agent revenue, retention extended from 3 months to 6 to 12.</li>
-            <li>Built and led a <strong>12-person team</strong> (9 engineering, 3 go-to-market); recruited Henry Loubet, former CEO of UnitedHealthcare, as strategic advisor.</li>
-            <li>Architected the AI systems myself: lead-generation models, RAG pipelines, and a 76%-accuracy seller-prediction model.</li>
+            <li>Built and led a <strong>12-person team</strong>; recruited Henry Loubet, former CEO of UnitedHealthcare, as strategic advisor.</li>
           </ul>
-          <div class="clients">
+          <div class="logos">
             <span>US Health Advisors (UnitedHealthcare)</span>
             <span>Northwestern Mutual</span>
             <span>Farmers Insurance</span>
-            <span>Knickerbocker & Associates</span>
+            <span>Knickerbocker &amp; Associates</span>
           </div>
         </div>
       </div>
 
-      <div class="t-item">
-        <div class="t-when">May 2021 – Aug 2025<br>Chandler, AZ</div>
-        <div class="t-body">
+      <div class="t rv">
+        <div class="when">May 2021 – Aug 2025<br>Chandler, AZ</div>
+        <div>
           <h3>Renesas Electronics</h3>
           <div class="sub">Software Engineer · global semiconductor company</div>
           <ul>
-            <li>Led <strong>One Flow</strong>, a unified workflow and database platform that harmonized operations across <strong>7 acquisitions ranging from $100M to $1.4B</strong>, coordinating teams in the US, Japan, UK, Germany, and Norway.</li>
-            <li>Built <strong>Florence</strong>, an internal AI copilot using LangChain, Llama, and RAG that helps <strong>1,000+ engineers</strong> find and synthesize technical data.</li>
-            <li>Developed a predictive system that forecasts semiconductor manufacturing errors up to <strong>6 months in advance</strong>.</li>
+            <li>Led <strong>One Flow</strong>, a platform that harmonized operations across <strong>7 acquisitions from $100M to $1.4B</strong>, coordinating teams in the US, Japan, UK, Germany and Norway.</li>
+            <li>Built <strong>Florence</strong>, an internal AI copilot on LangChain, Llama and RAG used by <strong>1,000+ engineers</strong>.</li>
+            <li>Built a predictive system that forecasts semiconductor manufacturing errors up to <strong>6 months in advance</strong>.</li>
           </ul>
         </div>
       </div>
 
-      <div class="t-item">
-        <div class="t-when">Oct 2023 – May 2024<br>Tempe, AZ<br><span class="tag">ACQUIRED</span></div>
-        <div class="t-body">
+      <div class="t rv">
+        <div class="when"><b>Acquired</b>Oct 2023 – May 2024<br>Tempe, AZ</div>
+        <div>
           <h3>Accompanian</h3>
-          <div class="sub">Co-Founder · habit tracking and mental wellness app</div>
+          <div class="sub">Co-Founder · habit tracking and mental wellness</div>
           <ul>
-            <li>Grew to <strong>4,000+ active users</strong>; partnered with licensed psychotherapy practices that clinically reviewed the product and referred users.</li>
-            <li>Won ASU Venture Devils funding; <strong>exited via acquisition in 2024</strong>.</li>
+            <li>Grew to <strong>4,000+ active users</strong>, with licensed psychotherapy practices clinically reviewing the product and referring users.</li>
+            <li>Won ASU Venture Devils funding and <strong>exited via acquisition in 2024</strong>.</li>
           </ul>
         </div>
       </div>
 
-      <div class="t-item">
-        <div class="t-when">Feb 2025 – Dec 2025<br>Arizona</div>
-        <div class="t-body">
+      <div class="t rv">
+        <div class="when">Feb 2025 – Dec 2025<br>Arizona</div>
+        <div>
           <h3>Silicon Oasis</h3>
           <div class="sub">Ambassador · representing Arizona for AI</div>
-          <ul>
-            <li>Mentored AI startups and builders across the state.</li>
-          </ul>
+          <ul><li>Mentored AI startups and builders across the state.</li></ul>
         </div>
       </div>
 
-      <div class="t-item">
-        <div class="t-when">2018<br>Arizona<br><span class="tag">AGE 17</span></div>
-        <div class="t-body">
+      <div class="t rv">
+        <div class="when"><b>Age 17</b>2018<br>Arizona</div>
+        <div>
           <h3>K Productions</h3>
-          <div class="sub">Founder · web design, social media, and advertising for local businesses</div>
-          <ul>
-            <li>Reached <strong>$100K ARR while still in high school</strong>.</li>
-          </ul>
+          <div class="sub">Founder · web design and advertising for local businesses</div>
+          <ul><li>Reached <strong>$100K ARR while still in high school</strong>.</li></ul>
         </div>
       </div>
 
@@ -427,46 +520,20 @@
 
 <!-- STORY -->
 <section id="story">
-  <div class="container">
-    <div class="label">The person behind the resume</div>
-    <h2 class="section-title">The streak <em>never broke.</em></h2>
-    <div class="story-grid">
-      <div class="story-text">
-        <p>
-          I've been starting things since high school. At 17 I ran <strong>K Productions</strong>,
-          a web design and advertising agency that reached $100K ARR before I graduated. My
-          summers went to Dignity Health, working accounting, resources, the ICU, and the ER.
-          I translated for Vietnamese patients at a community clinic, taught at my church, and
-          edited video for anyone who asked.
-        </p>
-        <p>
-          College at ASU brought <strong>Accompanian</strong>, which was acquired. Then
-          <strong>Solisa</strong>, venture-backed and scaled to millions in revenue with a
-          12-person team and enterprise clients I closed myself. Now <strong>DoorStopper</strong>
-          and <strong>Kijestic</strong>, where I'm testing a bigger idea: that one person with
-          the right AI infrastructure can operate like a company.
-        </p>
-        <p>
-          I'm fluent in English and Vietnamese, based in Arizona, and I answer my own email.
-        </p>
+  <div class="shell">
+    <div class="eyebrow rv">03 &nbsp;/&nbsp; The person behind the resume</div>
+    <h2 class="title rv">The streak <span class="q">never broke.</span></h2>
+    <div class="sgrid">
+      <div class="rv">
+        <p>I have been starting things since high school. At 17 I ran <strong>K Productions</strong>, a web design and advertising agency that reached $100K ARR before I graduated. My summers went to Dignity Health, working accounting, resources, the ICU and the ER. I translated for Vietnamese patients at a community clinic, taught at my church, and edited video for anyone who asked.</p>
+        <p>College at ASU brought <strong>Accompanian</strong>, which was acquired. Then <strong>Solisa</strong>, venture-backed and scaled to millions in revenue with a 12-person team and enterprise clients I closed myself. <strong>DoorStopper</strong> came and went inside a single quarter, which taught me more about pivots than the two years before it.</p>
+        <p>Now Kijestic, Dermetry and Dasom, where I am testing a bigger idea: that one person with the right AI infrastructure can operate like a company. I am fluent in English and Vietnamese, based in Arizona, and I answer my own email.</p>
       </div>
-      <div class="beliefs">
-        <div class="belief">
-          <h4>Founder-led sales</h4>
-          <p>I closed every enterprise account at Solisa myself. Selling is not a department, it's the founder's job.</p>
-        </div>
-        <div class="belief">
-          <h4>Trust first</h4>
-          <p>Demo before anyone pays. Proof up front, payment after approval.</p>
-        </div>
-        <div class="belief">
-          <h4>End-to-end ownership</h4>
-          <p>Architecture, code, pricing, contract, delivery. One owner, no handoffs.</p>
-        </div>
-        <div class="belief">
-          <h4>Agents do the work</h4>
-          <p>I build AI systems that run operations while I focus on direction and relationships.</p>
-        </div>
+      <div class="creed rv">
+        <div class="cd"><h4>Founder-led sales</h4><p>I closed every enterprise account at Solisa myself. Selling is not a department, it is the founder's job.</p></div>
+        <div class="cd"><h4>Trust first</h4><p>Demo before anyone pays. Proof up front, payment after approval.</p></div>
+        <div class="cd"><h4>End-to-end ownership</h4><p>Architecture, code, pricing, contract, delivery. One owner, no handoffs.</p></div>
+        <div class="cd"><h4>Agents do the work</h4><p>I build the systems that run operations so I can focus on direction and relationships.</p></div>
       </div>
     </div>
   </div>
@@ -474,73 +541,271 @@
 
 <!-- EDUCATION -->
 <section id="education">
-  <div class="container">
-    <div class="label">Education & honors</div>
-    <h2 class="section-title">Built in <em>Arizona.</em></h2>
-    <div class="edu-grid">
-      <div class="edu-card">
-        <h4>M.S., Robotics & Autonomous Systems</h4>
-        <div class="sub">Arizona State University</div>
-      </div>
-      <div class="edu-card">
-        <h4>B.S., Computer Science</h4>
-        <div class="sub">Arizona State University · Ira A. Fulton Schools of Engineering</div>
-        <p>GPA 3.7, Dean's List. Minors in Technological Entrepreneurship & Management and Business.</p>
-      </div>
-      <div class="edu-card">
-        <h4>Graduate Business Studies</h4>
-        <div class="sub">Stanford University, Graduate School of Business (attended)</div>
-      </div>
-      <div class="edu-card">
-        <h4>Mentorship</h4>
-        <div class="sub">ASU Campus Founders · AZ Nerd Network</div>
-        <p>Capstone sponsor and mentor for two ASU engineering teams; pitch event judge at ASU competitions.</p>
-      </div>
+  <div class="shell">
+    <div class="eyebrow rv">04 &nbsp;/&nbsp; Education &amp; honors</div>
+    <h2 class="title rv">Built in <span class="q">Arizona.</span></h2>
+    <div class="egrid rv">
+      <div class="e"><h4>M.S., Robotics &amp; Autonomous Systems</h4><div class="sub">Arizona State University</div></div>
+      <div class="e"><h4>B.S., Computer Science</h4><div class="sub">Arizona State University · Ira A. Fulton Schools of Engineering</div><p>GPA 3.7, Dean's List. Minors in Technological Entrepreneurship &amp; Management and Business.</p></div>
+      <div class="e"><h4>Graduate Business Studies</h4><div class="sub">Stanford University, Graduate School of Business (attended)</div></div>
+      <div class="e"><h4>Mentorship</h4><div class="sub">ASU Campus Founders · AZ Nerd Network</div><p>Capstone sponsor and mentor for two ASU engineering teams; pitch event judge at ASU competitions.</p></div>
     </div>
-    <div class="honors">
-      <span>Venture Devils winner (3x)</span>
+    <div class="honors rv">
+      <span>Venture Devils winner ×3</span>
       <span>ASU Lab to Launch winner</span>
-      <span>Tech Devils Judge's Choice Award</span>
-      <span>Top 10, Startup World Cup Arizona</span>
-      <span>ASU InvestU finalist (top 4)</span>
+      <span>Tech Devils Judge's Choice</span>
+      <span>Top 10, Startup World Cup AZ</span>
+      <span>ASU InvestU finalist</span>
     </div>
-  </div>
-</section>
 
-<!-- SKILLS -->
-<section id="skills" style="padding-top:0;">
-  <div class="container">
-    <div class="label">Toolbox</div>
-    <div class="skill-rows" style="margin-top:24px;">
-      <div class="skill-row"><div class="k">Languages</div><div class="v">Python · JavaScript / TypeScript · Java · C++ · SQL</div></div>
-      <div class="skill-row"><div class="k">AI / ML</div><div class="v">LangChain · RAG pipelines · LLM orchestration and routing · MCP tool servers · TensorFlow · PyTorch · prompt and context engineering</div></div>
-      <div class="skill-row"><div class="k">Cloud & DevOps</div><div class="v">AWS · Azure · GCP · Vercel · Docker · PM2 · GitHub Actions CI/CD · Playwright</div></div>
-      <div class="skill-row"><div class="k">Data</div><div class="v">PostgreSQL / Supabase · schema migrations · ETL in Python · revenue and event pipelines</div></div>
-      <div class="skill-row"><div class="k">Product & GTM</div><div class="v">Proposal and SOW drafting · pricing and packaging · Stripe billing · executive presentation · cross-time-zone delivery</div></div>
+    <div style="margin-top:64px" class="rv">
+      <div class="eyebrow" style="margin-bottom:22px">Toolbox</div>
+      <div class="krow"><div class="k">Languages</div><div class="val">Python · JavaScript / TypeScript · Java · C++ · SQL</div></div>
+      <div class="krow"><div class="k">AI / ML</div><div class="val">LangChain · RAG pipelines · LLM orchestration and routing · MCP tool servers · TensorFlow · PyTorch · on-device computer vision</div></div>
+      <div class="krow"><div class="k">Cloud &amp; DevOps</div><div class="val">AWS · Azure · GCP · Vercel · Docker · PM2 · GitHub Actions CI/CD · Playwright</div></div>
+      <div class="krow"><div class="k">Data</div><div class="val">PostgreSQL / Supabase · schema migrations · ETL in Python · revenue and event pipelines</div></div>
+      <div class="krow"><div class="k">Product &amp; GTM</div><div class="val">Proposals and SOWs · pricing and packaging · Stripe billing · executive presentation · cross-time-zone delivery</div></div>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-  <div class="glow" style="width:500px;height:500px;top:40px;left:50%;transform:translateX(-50%);"></div>
-  <div class="container" style="position:relative;z-index:1;">
-    <div class="label">Contact</div>
-    <h2 class="section-title">Building something? <em>Talk to me.</em></h2>
-    <p>Whether you're hiring an operator, writing checks, or want to partner on what's next, my inbox is open.</p>
-    <div class="contact-links">
-      <a class="btn btn-primary" href="mailto:kelvintran1000@gmail.com">kelvintran1000@gmail.com</a>
-      <a class="btn btn-ghost" href="https://linkedin.com/in/kelvintran888" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn btn-ghost" href="https://github.com/kelvinDtran" target="_blank" rel="noopener">GitHub</a>
+  <div class="shell">
+    <div class="eyebrow rv">05 &nbsp;/&nbsp; Contact</div>
+    <h2 class="title rv">Building something? <span class="q">Talk to me.</span></h2>
+    <p class="rv">Whether you are hiring an operator, writing checks, or want to partner on what is next, my inbox is open.</p>
+    <div class="clinks rv">
+      <a class="btn btn-solid" href="mailto:kelvintran1000@gmail.com" data-cur>kelvintran1000@gmail.com</a>
+      <a class="btn btn-line" href="https://linkedin.com/in/kelvintran888" target="_blank" rel="noopener" data-cur>LinkedIn</a>
+      <a class="btn btn-line" href="https://github.com/kelvinDtran" target="_blank" rel="noopener" data-cur>GitHub</a>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="container">
-    © 2026 Kelvin Tran · Gilbert, Arizona · <a href="resume.html">Resume</a>
+  <div class="shell frow">
+    <span>© 2026 Kelvin Tran</span>
+    <span>Gilbert, Arizona</span>
+    <span><a href="resume.html">Resume</a></span>
   </div>
 </footer>
 
+<script>
+(function () {
+  'use strict';
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  /* ---------- spring cursor (stiffness 170 / damping 26 per the spring preset table) ---------- */
+  if (fine && !reduce) {
+    var dot = document.querySelector('.cur'), ring = document.querySelector('.cur-ring');
+    var mx = innerWidth / 2, my = innerHeight / 2;
+    var s = { x: mx, y: my, vx: 0, vy: 0 };
+    var last = performance.now(), running = false;
+
+    addEventListener('mousemove', function (e) {
+      mx = e.clientX; my = e.clientY;
+      dot.style.transform = 'translate(' + mx + 'px,' + my + 'px)';
+      if (!running) { running = true; last = performance.now(); requestAnimationFrame(tick); }
+    }, { passive: true });
+
+    function tick(now) {
+      var dt = Math.min((now - last) / 1000, 0.064); // cap dt: prevents physics explosion after a tab switch
+      last = now;
+      var k = 170, d = 26;
+      s.vx += (-k * (s.x - mx) - d * s.vx) * dt;
+      s.vy += (-k * (s.y - my) - d * s.vy) * dt;
+      s.x += s.vx * dt; s.y += s.vy * dt;
+      ring.style.transform = 'translate(' + s.x + 'px,' + s.y + 'px)';
+      if (Math.abs(s.x - mx) + Math.abs(s.y - my) + Math.abs(s.vx) + Math.abs(s.vy) > 0.4) {
+        requestAnimationFrame(tick);
+      } else { running = false; }
+    }
+
+    var hot = 'a, button, [data-cur], .v, .t, .cd, .e';
+    document.querySelectorAll(hot).forEach(function (el) {
+      el.addEventListener('mouseenter', function () { ring.classList.add('on'); });
+      el.addEventListener('mouseleave', function () { ring.classList.remove('on'); });
+    });
+  }
+
+  /* ---------- agent network: one core, many agents ---------- */
+  var cv = document.getElementById('net');
+  if (cv && !reduce) {
+    var ctx = cv.getContext('2d'), W = 0, H = 0, dpr = Math.min(devicePixelRatio || 1, 2);
+    var N = 9, nodes = [], pulses = [], pointer = { x: -999, y: -999 }, vis = true, raf = 0;
+
+    function size() {
+      var r = cv.getBoundingClientRect();
+      W = r.width; H = r.height;
+      cv.width = W * dpr; cv.height = H * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      build();
+    }
+    function build() {
+      nodes = [];
+      var cx = W / 2, cy = H / 2, rad = Math.min(W, H) * 0.40;
+      for (var i = 0; i < N; i++) {
+        var a = (i / N) * Math.PI * 2 - Math.PI / 2;
+        var rr = rad * (0.74 + ((i * 37) % 100) / 100 * 0.34);
+        nodes.push({
+          hx: cx + Math.cos(a) * rr, hy: cy + Math.sin(a) * rr,
+          x: cx + Math.cos(a) * rr, y: cy + Math.sin(a) * rr,
+          vx: 0, vy: 0, a: a, r: 1.7 + (i % 3) * 0.9, ph: i * 0.7
+        });
+      }
+    }
+    function spawn() {
+      if (pulses.length < 5) pulses.push({ i: (Math.random() * N) | 0, t: 0, sp: 0.55 + Math.random() * 0.5 });
+    }
+
+    var last2 = performance.now(), acc = 0;
+    function frame(now) {
+      var dt = Math.min((now - last2) / 1000, 0.064);
+      last2 = now;
+      acc += dt;
+      if (acc > 0.85) { acc = 0; spawn(); }
+
+      var cx = W / 2, cy = H / 2;
+      ctx.clearRect(0, 0, W, H);
+
+      // update: gentle orbital drift + spring home + pointer repel
+      for (var i = 0; i < nodes.length; i++) {
+        var n = nodes[i];
+        var t = now / 1000;
+        var tx = n.hx + Math.cos(t * 0.42 + n.ph) * 7;
+        var ty = n.hy + Math.sin(t * 0.36 + n.ph) * 7;
+        var dx = pointer.x - n.x, dy = pointer.y - n.y;
+        var d2 = dx * dx + dy * dy;
+        if (d2 < 13000 && d2 > 0.01) {
+          var f = (1 - d2 / 13000) * 44;
+          var dd = Math.sqrt(d2);
+          tx -= (dx / dd) * f; ty -= (dy / dd) * f;
+        }
+        n.vx += (-150 * (n.x - tx) - 22 * n.vx) * dt;
+        n.vy += (-150 * (n.y - ty) - 22 * n.vy) * dt;
+        n.x += n.vx * dt; n.y += n.vy * dt;
+      }
+
+      // edges core -> agent
+      ctx.lineWidth = 1;
+      for (i = 0; i < nodes.length; i++) {
+        var m = nodes[i];
+        ctx.strokeStyle = 'rgba(47,230,208,0.13)';
+        ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(m.x, m.y); ctx.stroke();
+      }
+      // neighbour links
+      for (i = 0; i < nodes.length; i++) {
+        var p1 = nodes[i], p2 = nodes[(i + 1) % nodes.length];
+        ctx.strokeStyle = 'rgba(47,230,208,0.07)';
+        ctx.beginPath(); ctx.moveTo(p1.x, p1.y); ctx.lineTo(p2.x, p2.y); ctx.stroke();
+      }
+
+      // pulses travelling outward along an edge
+      for (i = pulses.length - 1; i >= 0; i--) {
+        var pu = pulses[i];
+        pu.t += dt * pu.sp;
+        if (pu.t >= 1) { pulses.splice(i, 1); continue; }
+        var tg = nodes[pu.i];
+        var px = cx + (tg.x - cx) * pu.t, py = cy + (tg.y - cy) * pu.t;
+        var al = Math.sin(pu.t * Math.PI);
+        ctx.fillStyle = 'rgba(47,230,208,' + (0.85 * al).toFixed(3) + ')';
+        ctx.beginPath(); ctx.arc(px, py, 2.1, 0, 6.283); ctx.fill();
+      }
+
+      // agent nodes
+      for (i = 0; i < nodes.length; i++) {
+        var q = nodes[i];
+        ctx.fillStyle = 'rgba(47,230,208,0.5)';
+        ctx.beginPath(); ctx.arc(q.x, q.y, q.r, 0, 6.283); ctx.fill();
+        ctx.strokeStyle = 'rgba(47,230,208,0.16)';
+        ctx.beginPath(); ctx.arc(q.x, q.y, q.r + 4.5, 0, 6.283); ctx.stroke();
+      }
+
+      raf = vis ? requestAnimationFrame(frame) : 0;
+    }
+
+    var wrap = document.getElementById('orbit');
+    wrap.addEventListener('mousemove', function (e) {
+      var r = cv.getBoundingClientRect();
+      pointer.x = e.clientX - r.left; pointer.y = e.clientY - r.top;
+    }, { passive: true });
+    wrap.addEventListener('mouseleave', function () { pointer.x = pointer.y = -999; });
+
+    addEventListener('resize', size, { passive: true });
+    document.addEventListener('visibilitychange', function () {
+      vis = !document.hidden;
+      if (vis && !raf) { last2 = performance.now(); raf = requestAnimationFrame(frame); }
+    });
+    // only burn frames while the hero is on screen
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (es) {
+        vis = es[0].isIntersecting && !document.hidden;
+        if (vis && !raf) { last2 = performance.now(); raf = requestAnimationFrame(frame); }
+      }, { threshold: 0 }).observe(wrap);
+    }
+    size();
+    raf = requestAnimationFrame(frame);
+  }
+
+  /* ---------- reveal on scroll ---------- */
+  var rv = document.querySelectorAll('.rv');
+  if ('IntersectionObserver' in window && !reduce) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    rv.forEach(function (el) { io.observe(el); });
+  } else {
+    rv.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  /* ---------- count-up ---------- */
+  function runCount(el) {
+    var to = parseFloat(el.dataset.count), dec = parseInt(el.dataset.dec || '0', 10);
+    var pre = el.dataset.pre || '', post = el.dataset.post || '';
+    if (reduce) return;
+    var t0 = performance.now(), dur = 1150;
+    (function step(now) {
+      var p = Math.min((now - t0) / dur, 1);
+      var e = 1 - Math.pow(1 - p, 3);
+      var v = to * e;
+      el.textContent = pre + (dec ? v.toFixed(dec) : Math.round(v).toLocaleString()) + post;
+      if (p < 1) requestAnimationFrame(step);
+    })(t0);
+  }
+  var counters = document.querySelectorAll('[data-count]');
+  if ('IntersectionObserver' in window) {
+    var io2 = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { runCount(e.target); io2.unobserve(e.target); } });
+    }, { threshold: 0.6 });
+    counters.forEach(function (c) { io2.observe(c); });
+  }
+
+  /* ---------- timeline rail fill (scroll-linked, read-then-write) ---------- */
+  var tl = document.getElementById('tl'), fill = document.getElementById('railfill'), ticking = false;
+  if (tl && fill) {
+    addEventListener('scroll', function () {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () {
+        var r = tl.getBoundingClientRect();
+        var p = (innerHeight * 0.62 - r.top) / r.height;
+        fill.style.height = (Math.max(0, Math.min(1, p)) * 100) + '%';
+        ticking = false;
+      });
+    }, { passive: true });
+  }
+
+  /* ---------- venture cards: pointer-tracked glow ---------- */
+  document.querySelectorAll('[data-tilt]').forEach(function (card) {
+    card.addEventListener('mousemove', function (e) {
+      var r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100) + '%');
+      card.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100) + '%');
+    }, { passive: true });
+  });
+})();
+</script>
 </body>
 </html>
