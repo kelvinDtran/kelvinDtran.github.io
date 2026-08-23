@@ -7,7 +7,38 @@
 <meta name="description" content="Kelvin Tran: founder and AI engineer. Runs Kijestic AI, Dermetry AI, and Dasom Essence. Previously founded Solisa AI, a venture-backed insurance AI platform scaled to roughly $2.5M cumulative revenue.">
 <meta property="og:title" content="Kelvin Tran / Founder &amp; AI Engineer">
 <meta property="og:description" content="One operator, a fleet of AI agents, three companies. Previously founded Solisa AI and Accompanian (acquired).">
+<link rel="canonical" href="https://kelvindtran.com/">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://kelvindtran.com/">
+<meta property="og:image" content="https://kelvindtran.com/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Kelvin Tran, founder and AI engineer">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kelvin Tran / Founder &amp; AI Engineer">
+<meta name="twitter:description" content="One operator, a fleet of AI agents, three companies. Previously founded Solisa AI and Accompanian (acquired).">
+<meta name="twitter:image" content="https://kelvindtran.com/og.jpg">
 <meta name="theme-color" content="#050607">
+<link rel="preload" as="image" href="photo-512.webp" type="image/webp" imagesrcset="photo-512.webp 512w, photo-1024.webp 1024w" imagesizes="(max-width: 900px) 60vw, 220px">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Kelvin Tran",
+  "url": "https://kelvindtran.com/",
+  "image": "https://kelvindtran.com/photo-1024.jpg",
+  "jobTitle": "Founder & AI Engineer",
+  "email": "mailto:kelvintran1000@gmail.com",
+  "address": { "@type": "PostalAddress", "addressLocality": "Gilbert", "addressRegion": "AZ", "addressCountry": "US" },
+  "alumniOf": [ { "@type": "CollegeOrUniversity", "name": "Arizona State University" } ],
+  "worksFor": [
+    { "@type": "Organization", "name": "Kijestic AI" },
+    { "@type": "Organization", "name": "Dermetry AI" },
+    { "@type": "Organization", "name": "Dasom Essence" }
+  ],
+  "sameAs": [ "https://linkedin.com/in/kelvintran888", "https://github.com/kelvinDtran" ]
+}
+</script>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23050607'/><path d='M9 7v18M9 16l9-9M9 16l10 9' stroke='%232FE6D0' stroke-width='2.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,6 +87,12 @@
   :focus-visible { outline: 2px solid var(--turq); outline-offset: 3px; border-radius: 3px; }
 
   .shell { width: var(--shell); margin: 0 auto; }
+  .skip {
+    position: fixed; top: 10px; left: 10px; z-index: 200; padding: 10px 14px; border-radius: 8px;
+    background: var(--turq); color: var(--ink); font-family: var(--mono); font-size: 12px;
+    transform: translateY(-200%); transition: transform .2s var(--ease);
+  }
+  .skip:focus { transform: none; }
   button, a { cursor: pointer; }
 
   /* ---------- custom cursor ---------- */
@@ -117,7 +154,30 @@
   }
   .navlinks a.cta::after { display: none; }
   .navlinks a.cta:hover { background: #6BF0E0; transform: translateY(-1px); }
-  @media (max-width: 800px) { .navlinks a:not(.cta) { display: none; } }
+  .menu-btn {
+    display: none; width: 40px; height: 40px; border: 1px solid var(--line); border-radius: 9px;
+    background: transparent; color: var(--bone); align-items: center; justify-content: center;
+    transition: border-color .2s var(--ease);
+  }
+  .menu-btn:hover { border-color: var(--line-hi); }
+  .menu-btn svg { width: 18px; height: 18px; }
+  .menu-btn .x { display: none; }
+  nav.open .menu-btn .x { display: block; }
+  nav.open .menu-btn .bars { display: none; }
+  @media (max-width: 800px) {
+    nav .inner { gap: 12px; }
+    .navlinks { gap: 14px; }
+    .navlinks a:not(.cta) { display: none; }
+    .menu-btn { display: inline-flex; }
+    nav.open .navlinks a:not(.cta) { display: block; }
+    nav.open .navlinks {
+      position: absolute; left: 0; right: 0; top: 62px; flex-direction: column; align-items: stretch; gap: 0;
+      background: rgba(5,6,7,.96); border-bottom: 1px solid var(--line); padding: 8px 0 14px;
+    }
+    nav.open .navlinks a { padding: 14px calc((100vw - var(--shell)) / 2); font-size: 13px; }
+    nav.open .navlinks a::after { display: none; }
+    nav.open .navlinks a.cta { margin: 10px calc((100vw - var(--shell)) / 2) 0; text-align: center; }
+  }
 
   /* ---------- hero ---------- */
   #hero { padding-top: clamp(120px, 16vh, 180px); padding-bottom: clamp(60px, 8vw, 90px); }
@@ -154,9 +214,9 @@
   .orbit canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
   .orbit .me {
     position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);
-    width: 41%; aspect-ratio: 1; border-radius: 50%; object-fit: cover;
-    border: 1px solid rgba(47,230,208,.45);
-    box-shadow: 0 0 0 7px rgba(5,6,7,.92), 0 0 46px rgba(47,230,208,.2);
+    width: 47%; height: auto; aspect-ratio: 1; border-radius: 50%; object-fit: cover; display: block;
+    border: 1px solid rgba(47,230,208,.55);
+    box-shadow: 0 0 0 8px rgba(5,6,7,.94), 0 0 0 9px rgba(47,230,208,.18), 0 0 54px rgba(47,230,208,.22);
   }
   .orbit-cap {
     position: absolute; left: 50%; bottom: -6px; transform: translateX(-50%);
@@ -297,19 +357,24 @@
 <div class="cur" aria-hidden="true"></div>
 <div class="cur-ring" aria-hidden="true"></div>
 
-<nav>
+<a class="skip" href="#hero">Skip to content</a>
+<nav id="nav">
   <div class="inner">
     <a class="brand" href="#" aria-label="Kelvin Tran, home">
       <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0A0D0F" stroke="rgba(47,230,208,.3)"/><path d="M10 8v16M10 16l8-8M10 16l9 8" stroke="#2FE6D0" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
       Kelvin Tran <em>/ founder</em>
     </a>
-    <div class="navlinks">
+    <div class="navlinks" id="navlinks">
       <a href="#now">Now</a>
       <a href="#record">Record</a>
       <a href="#story">Story</a>
       <a href="#contact">Contact</a>
       <a class="cta" href="resume.html">Resume</a>
     </div>
+    <button class="menu-btn" id="menubtn" aria-label="Open menu" aria-expanded="false" aria-controls="navlinks">
+      <svg class="bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
   </div>
 </nav>
 
@@ -341,7 +406,10 @@
 
       <div class="orbit" id="orbit">
         <canvas id="net" aria-hidden="true"></canvas>
-        <img class="me" src="photo.jpg" alt="Kelvin Tran">
+        <picture>
+          <source type="image/webp" srcset="photo-512.webp 512w, photo-1024.webp 1024w" sizes="(max-width: 900px) 60vw, 220px">
+          <img class="me" src="photo-512.jpg" srcset="photo-512.jpg 512w, photo-1024.jpg 1024w" sizes="(max-width: 900px) 60vw, 220px" width="512" height="512" alt="Kelvin Tran" fetchpriority="high" decoding="async">
+        </picture>
         <div class="orbit-cap">one operator &nbsp;·&nbsp; many agents</div>
       </div>
     </div>
@@ -477,8 +545,8 @@
           <h3>Renesas Electronics</h3>
           <div class="sub">Software Engineer · global semiconductor company</div>
           <ul>
-            <li>Led <strong>One Flow</strong>, a platform that harmonized operations across <strong>7 acquisitions from $100M to $1.4B</strong>, coordinating teams in the US, Japan, UK, Germany and Norway.</li>
             <li>Built <strong>Florence</strong>, an internal AI copilot on LangChain, Llama and RAG used by <strong>1,000+ engineers</strong>.</li>
+            <li>Built <strong>SWIFT</strong>, an internal diagramming and documentation tool that replaced Visio and SharePoint, and managed <strong>One Flow</strong>'s transition onto it: the workflow and methodology platform the Power group ran much of its operations on, inside a global organization spanning North America, Japan and Europe.</li>
             <li>Built a predictive system that forecasts semiconductor manufacturing errors up to <strong>6 months in advance</strong>.</li>
           </ul>
         </div>
@@ -546,8 +614,8 @@
     <h2 class="title rv">Built in <span class="q">Arizona.</span></h2>
     <div class="egrid rv">
       <div class="e"><h4>M.S., Robotics &amp; Autonomous Systems</h4><div class="sub">Arizona State University</div></div>
-      <div class="e"><h4>B.S., Computer Science</h4><div class="sub">Arizona State University · Ira A. Fulton Schools of Engineering</div><p>GPA 3.7, Dean's List. Minors in Technological Entrepreneurship &amp; Management and Business.</p></div>
-      <div class="e"><h4>Graduate Business Studies</h4><div class="sub">Stanford University, Graduate School of Business (attended)</div></div>
+      <div class="e"><h4>B.S., Computer Science</h4><div class="sub">Arizona State University · Ira A. Fulton Schools of Engineering</div><p>Minors in Technological Entrepreneurship &amp; Management and Business.</p></div>
+      <div class="e"><h4>Admitted, Stanford Graduate School of Business</h4><div class="sub">Deferred, did not enroll</div></div>
       <div class="e"><h4>Mentorship</h4><div class="sub">ASU Campus Founders · AZ Nerd Network</div><p>Capstone sponsor and mentor for two ASU engineering teams; pitch event judge at ASU competitions.</p></div>
     </div>
     <div class="honors rv">
@@ -747,6 +815,19 @@
     }
     size();
     raf = requestAnimationFrame(frame);
+  }
+
+  /* ---------- mobile menu ---------- */
+  var nav = document.getElementById('nav'), mb = document.getElementById('menubtn');
+  if (nav && mb) {
+    mb.addEventListener('click', function () {
+      var open = nav.classList.toggle('open');
+      mb.setAttribute('aria-expanded', open ? 'true' : 'false');
+      mb.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+    nav.querySelectorAll('.navlinks a').forEach(function (a) {
+      a.addEventListener('click', function () { nav.classList.remove('open'); mb.setAttribute('aria-expanded', 'false'); });
+    });
   }
 
   /* ---------- reveal on scroll ---------- */
