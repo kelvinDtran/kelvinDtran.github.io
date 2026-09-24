@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kelvin Tran / Product Work</title>
+<meta name="description" content="Product leadership evidence from Kelvin Tran: internal engineering tooling and platform migration at Renesas, a venture-backed insurance software company built from discovery to $1.4M in signed enterprise contracts, the AI agent infrastructure that runs Kijestic, and DoorStopper's rent-risk operations software for property managers.">
+<meta property="og:title" content="Kelvin Tran / Product Work">
+<meta property="og:description" content="Product leadership evidence from Kelvin Tran: internal engineering tooling and platform migration at Renesas, a venture-backed insurance software company built from discovery to $1.4M in signed enterprise contracts, the AI agent infrastructure that runs Kijestic, and DoorStopper's rent-risk operations software for property managers.">
+<link rel="canonical" href="https://kelvindtran.com/product">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kelvindtran.com/product">
+<meta property="og:image" content="https://kelvindtran.com/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Kelvin Tran, product work">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kelvin Tran / Product Work">
+<meta name="twitter:description" content="Product leadership evidence from Kelvin Tran: internal engineering tooling and platform migration at Renesas, a venture-backed insurance software company built from discovery to $1.4M in signed enterprise contracts, the AI agent infrastructure that runs Kijestic, and DoorStopper's rent-risk operations software for property managers.">
+<meta name="twitter:image" content="https://kelvindtran.com/og.jpg">
+<meta name="theme-color" content="#050607">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Kelvin Tran / Product Work",
+  "url": "https://kelvindtran.com/product",
+  "description": "Product leadership evidence from Kelvin Tran: internal engineering tooling and platform migration at Renesas, a venture-backed insurance software company built from discovery to $1.4M in signed enterprise contracts, the AI agent infrastructure that runs Kijestic, and DoorStopper's rent-risk operations software for property managers.",
+  "about": {
+    "@type": "Person",
+    "name": "Kelvin Tran",
+    "url": "https://kelvindtran.com/",
+    "sameAs": ["https://linkedin.com/in/kelvintran888", "https://github.com/kelvinDtran"]
+  }
+}
+</script>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23050607'/><path d='M9 7v18M9 16l9-9M9 16l10 9' stroke='%232FE6D0' stroke-width='2.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #050607;
+    --carbon: #0A0D0F;
+    --graphite: #12171A;
+    --turq: #2FE6D0;
+    --turq-deep: #0FB9A8;
+    --wash: rgba(47,230,208,0.08);
+    --bone: #E9EFEE;
+    --ash: #93A3A1;
+    --slate: #5E6C6B;
+    --line: rgba(233,239,238,0.09);
+    --line-hi: rgba(47,230,208,0.38);
+
+    --display: 'Space Grotesk', system-ui, sans-serif;
+    --body: 'Inter', system-ui, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --shell: min(1180px, 92vw);
+  }
+
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    background: var(--ink); color: var(--bone);
+    font-family: var(--body); font-size: 16px; line-height: 1.65;
+    overflow-x: hidden;
+  }
+  body::after {
+    content: ''; position: fixed; inset: 0; z-index: 9998; pointer-events: none;
+    opacity: .05;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+  }
+  ::selection { background: var(--turq); color: var(--ink); }
+  a { color: inherit; text-decoration: none; }
+  :focus-visible { outline: 2px solid var(--turq); outline-offset: 3px; border-radius: 3px; }
+
+  .shell { width: var(--shell); margin: 0 auto; }
+  .skip {
+    position: fixed; top: 10px; left: 10px; z-index: 200; padding: 10px 14px; border-radius: 8px;
+    background: var(--turq); color: var(--ink); font-family: var(--mono); font-size: 12px;
+    transform: translateY(-200%); transition: transform .2s var(--ease);
+  }
+  .skip:focus { transform: none; }
+  button, a { cursor: pointer; }
+
+  /* ---------- custom cursor ---------- */
+  .cur, .cur-ring { position: fixed; top: 0; left: 0; z-index: 9999; pointer-events: none; border-radius: 50%; }
+  .cur { width: 6px; height: 6px; background: var(--turq); margin: -3px 0 0 -3px; will-change: transform; }
+  .cur-ring {
+    width: 34px; height: 34px; margin: -17px 0 0 -17px; will-change: transform;
+    border: 1px solid rgba(47,230,208,.5);
+    transition: width .25s var(--ease), height .25s var(--ease), margin .25s var(--ease), background .25s var(--ease), border-color .25s var(--ease);
+  }
+  .cur-ring.on {
+    width: 62px; height: 62px; margin: -31px 0 0 -31px;
+    background: var(--wash); border-color: var(--turq);
+  }
+  @media (hover: none), (pointer: coarse) { .cur, .cur-ring { display: none; } }
+
+  /* ---------- type ---------- */
+  .eyebrow {
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: .2em; text-transform: uppercase; color: var(--turq);
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  }
+  .eyebrow::before {
+    content: ''; width: 26px; height: 1px; background: var(--turq); opacity: .6; flex: none;
+  }
+  h2.title {
+    font-family: var(--display); font-weight: 700;
+    font-size: clamp(30px, 4.4vw, 56px); line-height: 1.04; letter-spacing: -.035em;
+    margin: .4em 0 .5em; text-wrap: balance;
+  }
+  h2.title .q { color: var(--turq); }
+  section { padding: clamp(64px, 9vw, 120px) 0; position: relative; }
+
+  /* ---------- nav ---------- */
+  nav {
+    position: fixed; inset: 0 0 auto 0; z-index: 120;
+    background: rgba(5,6,7,.72); backdrop-filter: blur(18px) saturate(140%);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .inner { width: var(--shell); margin: 0 auto; height: 62px; display: flex; align-items: center; justify-content: space-between; }
+  .brand { display: flex; align-items: center; gap: 11px; font-family: var(--display); font-weight: 700; font-size: 15px; letter-spacing: -.02em; white-space: nowrap; }
+  .brand svg { width: 24px; height: 24px; display: block; flex: none; }
+  .brand em { font-style: normal; color: var(--slate); font-weight: 500; }
+  @media (max-width: 480px) { .brand em { display: none; } }
+  .navlinks { display: flex; align-items: center; gap: 30px; }
+  .navlinks a {
+    font-family: var(--mono); font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--ash); transition: color .2s var(--ease); position: relative;
+  }
+  .navlinks a::after {
+    content: ''; position: absolute; left: 0; bottom: -6px; width: 100%; height: 1px;
+    background: var(--turq); transform: scaleX(0); transform-origin: left;
+    transition: transform .3s var(--ease);
+  }
+  .navlinks a:hover { color: var(--bone); }
+  .navlinks a:hover::after { transform: scaleX(1); }
+  .navlinks a.current { color: var(--bone); }
+  .navlinks a.current::after { transform: scaleX(1); }
+  .navlinks a.cta {
+    color: var(--ink); background: var(--turq); padding: 8px 15px; border-radius: 7px; font-weight: 500;
+    transition: background .2s var(--ease), transform .2s var(--ease);
+  }
+  .navlinks a.cta::after { display: none; }
+  .navlinks a.cta:hover { background: #6BF0E0; transform: translateY(-1px); }
+  .menu-btn {
+    display: none; width: 40px; height: 40px; border: 1px solid var(--line); border-radius: 9px;
+    background: transparent; color: var(--bone); align-items: center; justify-content: center;
+    transition: border-color .2s var(--ease);
+  }
+  .menu-btn:hover { border-color: var(--line-hi); }
+  .menu-btn svg { width: 18px; height: 18px; }
+  .menu-btn .x { display: none; }
+  nav.open .menu-btn .x { display: block; }
+  nav.open .menu-btn .bars { display: none; }
+  @media (max-width: 800px) {
+    nav .inner { gap: 12px; }
+    .navlinks { gap: 14px; }
+    .navlinks a:not(.cta) { display: none; }
+    .menu-btn { display: inline-flex; }
+    nav.open .navlinks a:not(.cta) { display: block; }
+    nav.open .navlinks {
+      position: absolute; left: 0; right: 0; top: 62px; flex-direction: column; align-items: stretch; gap: 0;
+      background: rgba(5,6,7,.96); border-bottom: 1px solid var(--line); padding: 8px 0 14px;
+    }
+    nav.open .navlinks a { padding: 14px calc((100vw - var(--shell)) / 2); font-size: 13px; }
+    nav.open .navlinks a::after { display: none; }
+    nav.open .navlinks a.cta { margin: 10px calc((100vw - var(--shell)) / 2) 0; text-align: center; }
+  }
+
+  /* ---------- hero ---------- */
+  #hero { padding-top: clamp(112px, 15vh, 168px); padding-bottom: 0; }
+  .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(30px, 5vw, 64px); align-items: start; }
+  @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; gap: 40px; } }
+
+  h1 {
+    font-family: var(--display); font-weight: 700;
+    font-size: clamp(36px, 5.6vw, 76px); line-height: 1; letter-spacing: -.04em;
+    margin: 22px 0 0;
+  }
+  h1 .line { display: block; overflow: hidden; }
+  h1 .line > span { display: block; transform: translateY(105%); animation: rise .95s var(--ease) forwards; }
+  h1 .line:nth-child(2) > span { animation-delay: .1s; }
+  h1 .line:nth-child(3) > span { animation-delay: .2s; }
+  @keyframes rise { to { transform: translateY(0); } }
+  h1 .q { color: var(--turq); }
+
+  .lede { color: var(--ash); font-size: clamp(15px, 1.4vw, 17px); max-width: 58ch; margin-top: 24px; }
+  .lede strong { color: var(--bone); font-weight: 600; }
+
+  .ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+  .btn {
+    font-size: 14px; font-weight: 600; padding: 12px 22px; border-radius: 9px;
+    border: 1px solid transparent; transition: all .22s var(--ease); display: inline-flex; align-items: center; gap: 9px;
+  }
+  .btn-solid { background: var(--turq); color: var(--ink); }
+  .btn-solid:hover { background: #6BF0E0; transform: translateY(-2px); box-shadow: 0 10px 34px rgba(47,230,208,.22); }
+  .btn-line { border-color: var(--line); color: var(--bone); }
+  .btn-line:hover { border-color: var(--turq); color: var(--turq); transform: translateY(-2px); }
+
+  /* ---------- at-a-glance kpi card ---------- */
+  .kpi-card { border: 1px solid var(--line); border-radius: 16px; padding: 22px 24px; background: var(--carbon); }
+  .kpirow { display: grid; grid-template-columns: 90px 1fr; gap: 16px; align-items: baseline; padding: 14px 0; border-top: 1px solid var(--line); }
+  .kpirow:first-child { border-top: 0; }
+  .kn { font-family: var(--display); font-weight: 700; font-size: clamp(20px, 2vw, 26px); letter-spacing: -.02em; color: var(--turq); }
+  .kl { color: var(--ash); font-size: 12.5px; line-height: 1.5; }
+
+  .strip { font-family: var(--mono); font-size: 12px; color: var(--slate); letter-spacing: .03em; padding: 22px 0; border-top: 1px solid var(--line); margin-top: clamp(40px,6vw,70px); }
+
+  /* ---------- how I work: principle rail ---------- */
+  .principle-rail { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; }
+  @media (max-width: 980px) { .principle-rail { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .principle-rail { grid-template-columns: 1fr; } }
+  .pr { border-top: 1px solid var(--line); padding-top: 18px; }
+  .prn { font-family: var(--mono); color: var(--turq); font-size: 12px; letter-spacing: .08em; margin-bottom: 12px; }
+  .pr h3 { font-family: var(--display); font-weight: 700; font-size: 17px; letter-spacing: -.01em; margin-bottom: 9px; line-height: 1.25; }
+  .pr p { color: var(--ash); font-size: 13px; line-height: 1.55; }
+
+  /* ---------- case index ---------- */
+  .case-index { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  @media (max-width: 980px) { .case-index { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .case-index { grid-template-columns: 1fr; } }
+  .cix { display: block; background: var(--carbon); border: 1px solid var(--line); border-radius: 14px; padding: 22px 20px; transition: border-color .25s var(--ease), transform .25s var(--ease); }
+  .cix:hover, .cix.active { border-color: var(--line-hi); transform: translateY(-3px); }
+  .cixn { font-family: var(--mono); font-size: 11px; color: var(--turq); letter-spacing: .1em; margin-bottom: 12px; }
+  .cix h3 { font-family: var(--display); font-weight: 700; font-size: 18px; letter-spacing: -.015em; }
+  .cixs { font-family: var(--mono); font-size: 10.5px; color: var(--slate); letter-spacing: .06em; margin-top: 6px; text-transform: uppercase; }
+  .cix p { color: var(--ash); font-size: 13px; margin-top: 12px; line-height: 1.5; }
+  .cixd { font-family: var(--mono); font-size: 11px; color: var(--turq); margin-top: 14px; }
+
+  /* ---------- case study shared ---------- */
+  .case-hd { margin-bottom: 20px; }
+  .role-line { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--slate); margin-top: 6px; }
+  .role-note { color: var(--ash); font-size: 14px; margin-top: 10px; max-width: 62ch; }
+  .case-cols { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(28px,4vw,52px); align-items: start; margin-top: 30px; }
+  @media (max-width: 900px) { .case-cols { grid-template-columns: 1fr; } }
+  .nlabel { display: block; font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--turq); margin-bottom: 8px; }
+  .nblock { margin-bottom: 22px; }
+  .nblock p { color: var(--ash); font-size: 14.5px; line-height: 1.65; }
+  .nblock:last-child { margin-bottom: 0; }
+
+  svg.diagram { width: 100%; height: auto; display: block; }
+  svg.diagram .dbox { fill: var(--carbon); stroke: var(--line); stroke-width: 1; }
+  svg.diagram .dbox-hi { fill: var(--wash); stroke: var(--turq); }
+  svg.diagram text { font-family: var(--mono); }
+  svg.diagram .dtxt { font-size: 11.5px; fill: var(--bone); }
+  svg.diagram .dsub { font-size: 10px; fill: var(--slate); }
+  svg.diagram .dlbl { font-size: 10px; fill: var(--turq); letter-spacing: .04em; }
+  svg.diagram .dline { stroke: var(--turq); stroke-width: 1.4; fill: none; }
+  svg.diagram .ddash { stroke: var(--slate); stroke-width: 1.2; stroke-dasharray: 4 4; fill: none; }
+  svg.diagram .darrow { stroke: var(--turq); stroke-width: 1.6; fill: none; }
+  .diagram-wrap { border: 1px solid var(--line); border-radius: 14px; padding: 18px; background: var(--carbon); }
+  .dcap { font-family: var(--mono); font-size: 10.5px; color: var(--slate); margin-top: 12px; letter-spacing: .02em; }
+
+  .outband { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; border-top: 1px solid var(--line); padding-top: 28px; margin-top: 44px; }
+  @media (max-width: 720px) { .outband { grid-template-columns: 1fr; } }
+  .oc .on { font-family: var(--display); font-weight: 700; font-size: clamp(19px, 2.2vw, 25px); letter-spacing: -.02em; }
+  .oc .os { font-family: var(--mono); font-size: 11px; color: var(--slate); margin-top: 8px; line-height: 1.5; }
+
+  .chiprow { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
+  .chiprow span { font-family: var(--mono); font-size: 11px; color: var(--ash); border: 1px solid var(--line); padding: 6px 11px; border-radius: 6px; }
+
+  .small-note { color: var(--ash); font-size: 13px; margin-top: 24px; max-width: 72ch; line-height: 1.6; }
+
+  /* ---------- browser frame cards ---------- */
+  .bframe { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--carbon); }
+  .bframe .bbar { display: flex; align-items: center; gap: 14px; padding: 10px 14px; border-bottom: 1px solid var(--line); }
+  .bframe .bdots { display: flex; gap: 6px; flex: none; }
+  .bframe .bdots span { width: 6px; height: 6px; border-radius: 50%; background: var(--slate); }
+  .bframe .burl { font-family: var(--mono); font-size: 11px; color: var(--slate); letter-spacing: .03em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .bframe img { display: block; width: 100%; height: auto; }
+  .bframe figcaption { font-family: var(--mono); font-size: 10.5px; color: var(--slate); padding: 10px 14px; border-top: 1px solid var(--line); }
+
+  /* ---------- solisa: horizontal timeline ---------- */
+  .htl { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; border-top: 1px solid var(--line); padding-top: 26px; margin-top: 30px; }
+  @media (max-width: 900px) { .htl { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 520px) { .htl { grid-template-columns: 1fr; } }
+  .htn { border-left: 2px solid var(--line); padding-left: 14px; position: relative; }
+  .htn::before { content: ''; position: absolute; left: -5px; top: 0; width: 8px; height: 8px; border-radius: 50%; background: var(--turq); }
+  .htn .htd { font-family: var(--mono); font-size: 11px; color: var(--turq); letter-spacing: .05em; margin-bottom: 6px; }
+  .htn p { color: var(--ash); font-size: 13px; line-height: 1.5; }
+
+  .htl3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; border-top: 1px solid var(--line); padding-top: 26px; margin-top: 46px; }
+  @media (max-width: 720px) { .htl3 { grid-template-columns: 1fr; } }
+
+  .kpi4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; border-top: 1px solid var(--line); padding-top: 28px; margin-top: 46px; }
+  @media (max-width: 860px) { .kpi4 { grid-template-columns: repeat(2, 1fr); } }
+
+  /* ---------- kijestic: 2+cards grid ---------- */
+  .kijgrid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 28px; margin-top: 34px; align-items: start; }
+  @media (max-width: 900px) { .kijgrid { grid-template-columns: 1fr; } }
+  .kcards { display: grid; gap: 20px; }
+  .prod-card { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: var(--carbon); }
+  .prod-card .pc-shots { display: grid; gap: 1px; background: var(--line); }
+  .prod-card .pc-shots .bframe { border: 0; border-radius: 0; }
+  .prod-card .pc-body { padding: 22px 24px 26px; }
+  .prod-card h4 { font-family: var(--display); font-weight: 700; font-size: 19px; letter-spacing: -.01em; margin-top: 12px; }
+  .prod-card p { color: var(--ash); font-size: 13.5px; margin-top: 12px; line-height: 1.6; }
+
+  .incidents { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 50px; }
+  @media (max-width: 860px) { .incidents { grid-template-columns: 1fr; } }
+  .inc { border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; }
+  .inc .il { font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--turq); margin-bottom: 10px; display: block; }
+  .inc p { color: var(--ash); font-size: 13.5px; line-height: 1.5; }
+
+  /* ---------- doorstopper: phase grid ---------- */
+  .phase-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(28px, 4vw, 48px); margin-top: 30px; align-items: start; }
+  @media (max-width: 900px) { .phase-grid { grid-template-columns: 1fr; } }
+  .phase-lbl { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--turq); margin-bottom: 14px; }
+  .phase-block p { color: var(--ash); font-size: 14.5px; line-height: 1.65; }
+  .pstack { display: grid; gap: 16px; margin-top: 24px; border-top: 1px solid var(--line); padding-top: 18px; }
+  .stage-line { font-family: var(--mono); font-size: 11.5px; color: var(--slate); margin-top: 20px; line-height: 1.7; }
+  .boundary { font-family: var(--mono); font-size: 12px; color: var(--slate); margin-top: 30px; max-width: 62ch; line-height: 1.6; }
+  .phase2-shots { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 18px; }
+  @media (max-width: 600px) { .phase2-shots { grid-template-columns: 1fr; } }
+
+  /* ---------- earlier work / krow (reused) ---------- */
+  .vgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  @media (max-width: 980px) { .vgrid { grid-template-columns: 1fr; } }
+  .v {
+    position: relative; background: var(--carbon); border: 1px solid var(--line);
+    border-radius: 16px; padding: 26px 24px; overflow: hidden;
+    transition: border-color .3s var(--ease), transform .3s var(--ease);
+  }
+  .v:hover { border-color: var(--line-hi); transform: translateY(-4px); }
+  .v .vtop { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+  .v h3 { font-family: var(--display); font-weight: 700; font-size: 19px; letter-spacing: -.02em; }
+  .v .role { font-family: var(--mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--slate); margin-top: 7px; line-height: 1.6; }
+  .pill {
+    font-family: var(--mono); font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase;
+    padding: 5px 9px; border-radius: 99px; white-space: nowrap;
+    color: var(--turq); border: 1px solid rgba(47,230,208,.32); background: var(--wash);
+  }
+  .v p { color: var(--ash); font-size: 13.5px; margin-top: 15px; line-height: 1.6; }
+
+  .krow { display: grid; grid-template-columns: 190px 1fr; gap: 26px; padding: 16px 0; border-top: 1px solid var(--line); align-items: baseline; }
+  @media (max-width: 720px) { .krow { grid-template-columns: 1fr; gap: 4px; } }
+  .krow .k { font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--turq); }
+  .krow .val { color: var(--ash); font-size: 14.5px; }
+
+  /* ---------- closing ---------- */
+  #contact { text-align: center; }
+  #contact h2.title { font-size: clamp(34px, 5.4vw, 66px); }
+  #contact .eyebrow { justify-content: center; }
+  #contact > .shell > p { color: var(--ash); max-width: 52ch; margin: 0 auto; }
+  .path-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 44px; text-align: left; }
+  @media (max-width: 860px) { .path-row { grid-template-columns: 1fr; } }
+  .path { border: 1px solid var(--line); border-radius: 14px; padding: 26px 24px; background: var(--carbon); }
+  .path h3 { font-family: var(--display); font-weight: 700; font-size: 18px; letter-spacing: -.01em; }
+  .path p { color: var(--ash); font-size: 13.5px; margin-top: 10px; line-height: 1.55; }
+  .path .btn { margin-top: 18px; }
+  .clinks { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 30px; }
+  footer { border-top: 1px solid var(--line); padding: 26px 0; }
+  .frow { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-family: var(--mono); font-size: 11px; color: var(--slate); letter-spacing: .06em; }
+  .frow a:hover { color: var(--turq); }
+
+  /* ---------- reveal ---------- */
+  .rv { opacity: 0; transform: translateY(22px); transition: opacity .75s var(--ease), transform .75s var(--ease); }
+  .rv.in { opacity: 1; transform: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+    h1 .line > span { transform: none; }
+    .rv { opacity: 1; transform: none; }
+    .cur, .cur-ring { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cur" aria-hidden="true"></div>
+<div class="cur-ring" aria-hidden="true"></div>
+
+<a class="skip" href="#hero">Skip to content</a>
+<nav id="nav">
+  <div class="inner">
+    <a class="brand" href="/" aria-label="Kelvin Tran, home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0A0D0F" stroke="rgba(47,230,208,.3)"/><path d="M10 8v16M10 16l8-8M10 16l9 8" stroke="#2FE6D0" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Kelvin Tran <em>/ product work</em>
+    </a>
+    <div class="navlinks" id="navlinks">
+      <a href="/">Home</a>
+      <a href="/product" class="current" aria-current="page">Product</a>
+      <a href="https://kijestic.com" target="_blank" rel="noopener">Kijestic</a>
+      <a href="https://doorstopper.io" target="_blank" rel="noopener">DoorStopper</a>
+      <a href="/#contact">Contact</a>
+      <a class="cta" href="/resume">Resume</a>
+    </div>
+    <button class="menu-btn" id="menubtn" aria-label="Open menu" aria-expanded="false" aria-controls="navlinks">
+      <svg class="bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero" aria-labelledby="hero-h1">
+  <div class="shell">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">Product work &nbsp;/&nbsp; 2022 to now</div>
+        <h1 id="hero-h1">
+          <span class="line"><span>Products people adopt,</span></span>
+          <span class="line"><span>inside the workflows</span></span>
+          <span class="line"><span>they already <span class="q">run.</span></span></span>
+        </h1>
+        <p class="lede">
+          I have owned products since 2022: an internal engineering platform inside a global semiconductor
+          company, a venture-backed enterprise software company I founded and sold into insurance carriers
+          and brokerages, the agent infrastructure that runs Kijestic, and DoorStopper's rent-risk operations
+          product for property managers. Each one shipped because the workflow was understood before the
+          software was written.
+        </p>
+        <div class="ctas">
+          <a class="btn btn-solid" href="#cases" data-cur>
+            Read the case studies
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-line" href="/resume" data-cur>Resume</a>
+          <a class="btn btn-line" href="mailto:kelvintran1000@gmail.com" data-cur>Email me</a>
+        </div>
+      </div>
+
+      <aside class="kpi-card rv" aria-label="At a glance">
+        <div class="kpirow">
+          <div class="kn" data-count="1.4" data-pre="$" data-post="M" data-dec="1">$1.4M</div>
+          <div class="kl">Signed enterprise contracts at Solisa AI, every one closed by me</div>
+        </div>
+        <div class="kpirow">
+          <div class="kn" data-count="5" data-post="x">5x</div>
+          <div class="kl">Lead-to-policy conversion delivered for Solisa's insurance customers, 0.7% to about 3.5%</div>
+        </div>
+        <div class="kpirow">
+          <div class="kn" data-count="14">14</div>
+          <div class="kl">Scheduled agent services running Kijestic in production</div>
+        </div>
+        <div class="kpirow">
+          <div class="kn" data-count="8">8</div>
+          <div class="kl">Tenant placements in DoorStopper's first quarter, with 3 licensed brokerage partners</div>
+        </div>
+        <div class="kpirow">
+          <div class="kn" data-count="4000" data-post="+">4,000+</div>
+          <div class="kl">Active users at Accompanian, which was acquired</div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="strip rv">Operates Kijestic AI and DoorStopper today. Previously Solisa AI (founder and CEO), Accompanian (co-founder, acquired), Renesas Electronics.</div>
+  </div>
+</section>
+
+<!-- HOW I WORK -->
+<section id="how" aria-labelledby="how-h">
+  <div class="shell">
+    <div class="eyebrow rv">01 &nbsp;/&nbsp; How I work</div>
+    <h2 class="title rv" id="how-h">Five habits, <span class="q">one method.</span></h2>
+    <div class="principle-rail">
+      <div class="pr rv">
+        <div class="prn">01</div>
+        <h3>Discovery before roadmap.</h3>
+        <p>Solisa's first enterprise contract started with a frontline agent's complaint, not a feature list.</p>
+      </div>
+      <div class="pr rv">
+        <div class="prn">02</div>
+        <h3>Migration is the product.</h3>
+        <p>At Renesas the hard part of SWIFT was moving One Flow onto it while the group kept running on it.</p>
+      </div>
+      <div class="pr rv">
+        <div class="prn">03</div>
+        <h3>Sell it yourself first.</h3>
+        <p>Every Solisa enterprise account was closed by me before there was a sales team.</p>
+      </div>
+      <div class="pr rv">
+        <div class="prn">04</div>
+        <h3>Instrument the outcome.</h3>
+        <p>Conversion, agent revenue and retention were the Solisa scorecard, not feature counts.</p>
+      </div>
+      <div class="pr rv">
+        <div class="prn">05</div>
+        <h3>Gates before autonomy.</h3>
+        <p>Kijestic's agents ship nothing customer-facing without a review gate; payments, credentials, DNS, legal and banking stay with a person.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDY INDEX -->
+<section id="cases" aria-labelledby="cases-h">
+  <div class="shell">
+    <div class="eyebrow rv">02 &nbsp;/&nbsp; Case studies</div>
+    <h2 class="title rv" id="cases-h">Four products, <span class="q">four workflows.</span></h2>
+    <div class="case-index" id="caseIndex">
+      <a class="cix rv" href="#renesas" data-case="renesas">
+        <div class="cixn">2.1</div>
+        <h3>Renesas Electronics</h3>
+        <div class="cixs">SWIFT and One Flow</div>
+        <p>Internal tooling and platform migration inside a global semiconductor company.</p>
+        <div class="cixd">2022 to 2025</div>
+      </a>
+      <a class="cix rv" href="#solisa" data-case="solisa">
+        <div class="cixn">2.2</div>
+        <h3>Solisa AI</h3>
+        <div class="cixs">Insurance sales software</div>
+        <p>Discovery to $1.4M in signed enterprise contracts.</p>
+        <div class="cixd">2024 to 2026</div>
+      </a>
+      <a class="cix rv" href="#kijestic" data-case="kijestic">
+        <div class="cixn">2.3</div>
+        <h3>Kijestic AI</h3>
+        <div class="cixs">Agent infrastructure and client work</div>
+        <p>An AI systems company that operates what it builds.</p>
+        <div class="cixd">2026 to now</div>
+      </a>
+      <a class="cix rv" href="#doorstopper" data-case="doorstopper">
+        <div class="cixn">2.4</div>
+        <h3>DoorStopper</h3>
+        <div class="cixs">Rent-risk operations for property managers</div>
+        <p>From tenant placement to a PM operating layer.</p>
+        <div class="cixd">2026 to now</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 2.1 RENESAS -->
+<section id="renesas" aria-labelledby="renesas-h">
+  <div class="shell">
+    <div class="case-hd">
+      <div class="eyebrow rv">2.1 &nbsp;/&nbsp; Renesas Electronics &nbsp;&middot;&nbsp; May 2022 to August 2025 &nbsp;&middot;&nbsp; Chandler, Arizona</div>
+      <h2 class="title rv" id="renesas-h">One tool for the diagrams and the documentation, <span class="q">then the migration.</span></h2>
+      <div class="role-line rv">NCG Software Engineer Intern, Power group</div>
+      <p class="role-note rv">An intern title, with product-owner scope: I built the tool and ran the platform transition onto it.</p>
+    </div>
+
+    <div class="case-cols">
+      <div class="rv">
+        <div class="nblock">
+          <span class="nlabel">Context</span>
+          <p>Renesas is a global semiconductor company. The Power group ran much of its operations on One Flow, its workflow and methodology platform, inside an organization spanning North America, Japan and Europe.</p>
+        </div>
+        <div class="nblock">
+          <span class="nlabel">Problem</span>
+          <p>The group's process diagrams lived in Microsoft Visio files and its documentation in SharePoint. Two tools, two sources of truth, and a methodology platform that depended on both staying in step across three continents.</p>
+        </div>
+        <div class="nblock">
+          <span class="nlabel">What I did</span>
+          <p>I built SWIFT, an internal diagramming and documentation tool that replaced Visio and SharePoint for this work, and then managed One Flow's transition onto it. The transition was the real product: understanding how teams in three regions used One Flow, defining what SWIFT had to do before anyone would move, and moving a platform people ran on without stopping them. Around it I wrote Jira and Excel automations that improved project manager productivity, built a predictive system that forecasts semiconductor manufacturing errors up to six months in advance, and worked with the enterprise sales team to facilitate and close the Method Park Stages and ViFlow deals.</p>
+        </div>
+      </div>
+
+      <div class="rv">
+        <div class="diagram-wrap">
+          <svg class="diagram" viewBox="0 0 560 290" role="img" aria-label="Diagram: before, Visio diagrams, SharePoint documentation and One Flow methodology connected loosely with drift; after, SWIFT combining diagrams and documentation feeding One Flow on SWIFT across North America, Japan and Europe, joined by a managed transition arrow.">
+            <text x="14" y="18" class="dlbl">BEFORE</text>
+            <rect class="dbox" x="14" y="30" width="190" height="46" rx="8"/>
+            <text x="26" y="58" class="dtxt">Visio diagrams</text>
+            <rect class="dbox" x="14" y="118" width="190" height="46" rx="8"/>
+            <text x="26" y="138" class="dtxt">SharePoint</text>
+            <text x="26" y="152" class="dtxt">documentation</text>
+            <rect class="dbox" x="14" y="206" width="190" height="46" rx="8"/>
+            <text x="26" y="226" class="dtxt">One Flow</text>
+            <text x="26" y="240" class="dtxt">methodology</text>
+            <path class="ddash" d="M109 76 L109 118"/>
+            <path class="ddash" d="M109 164 L109 206"/>
+            <path class="ddash" d="M204 53 C246 110 246 172 204 229"/>
+            <text x="220" y="145" class="dsub">drift</text>
+
+            <text x="332" y="18" class="dlbl">AFTER</text>
+            <rect class="dbox dbox-hi" x="332" y="30" width="214" height="56" rx="8"/>
+            <text x="344" y="54" class="dtxt">SWIFT: diagrams +</text>
+            <text x="344" y="70" class="dtxt">documentation</text>
+            <rect class="dbox dbox-hi" x="332" y="132" width="214" height="42" rx="8"/>
+            <text x="344" y="158" class="dtxt">One Flow on SWIFT</text>
+            <path class="dline" d="M439 86 L439 132"/>
+            <rect class="dbox" x="332" y="220" width="62" height="40" rx="7"/>
+            <text x="340" y="244" class="dsub">N. America</text>
+            <rect class="dbox" x="406" y="220" width="62" height="40" rx="7"/>
+            <text x="420" y="244" class="dsub">Japan</text>
+            <rect class="dbox" x="480" y="220" width="62" height="40" rx="7"/>
+            <text x="489" y="244" class="dsub">Europe</text>
+            <path class="dline" d="M363 220 L400 174"/>
+            <path class="dline" d="M437 220 L437 174"/>
+            <path class="dline" d="M511 220 L474 174"/>
+
+            <path class="darrow" d="M210 150 L326 150"/>
+            <path class="darrow" d="M318 144 L326 150 L318 156"/>
+            <text x="216" y="130" class="dlbl">managed transition</text>
+          </svg>
+          <div class="dcap">Illustrative of the workflow shape. No internal Renesas data shown.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="outband">
+      <div class="oc rv">
+        <div class="on">Two tools replaced by one</div>
+        <div class="os">SWIFT took over the Visio and SharePoint work</div>
+      </div>
+      <div class="oc rv">
+        <div class="on">A running platform moved</div>
+        <div class="os">One Flow transitioned onto SWIFT without a stop</div>
+      </div>
+      <div class="oc rv">
+        <div class="on">Three regions, one system</div>
+        <div class="os">North America, Japan and Europe on the same documentation</div>
+      </div>
+    </div>
+
+    <div class="chiprow rv">
+      <span>Internal enterprise tooling</span><span>Migration and adoption</span><span>Cross-region stakeholders</span><span>Documentation as product</span><span>Process automation</span>
+    </div>
+  </div>
+</section>
+
+<!-- 2.2 SOLISA -->
+<section id="solisa" aria-labelledby="solisa-h">
+  <div class="shell">
+    <div class="case-hd">
+      <div class="eyebrow rv">2.2 &nbsp;/&nbsp; Solisa AI &nbsp;&middot;&nbsp; February 2024 to January 2026 &nbsp;&middot;&nbsp; Palo Alto, California &nbsp;&middot;&nbsp; Venture-backed</div>
+      <h2 class="title rv" id="solisa-h">From a complaint over drinks to <span class="q">$1.4M in signed enterprise contracts.</span></h2>
+      <div class="role-line rv">Founder and CEO</div>
+    </div>
+
+    <div class="htl">
+      <div class="htn rv"><div class="htd">Late 2023</div><p>Discovery: a friend who sold insurance described the sales workflow's pain</p></div>
+      <div class="htn rv"><div class="htd">February 2024</div><p>Solisa incorporated in Palo Alto</p></div>
+      <div class="htn rv"><div class="htd">September 2024</div><p>First enterprise agreement effective</p></div>
+      <div class="htn rv"><div class="htd">May 2025</div><p>Northwestern Mutual and Farmers Insurance agreements</p></div>
+      <div class="htn rv"><div class="htd">January 2026</div><p>End of my tenure</p></div>
+    </div>
+
+    <div class="case-cols">
+      <div class="rv">
+        <div class="diagram-wrap">
+          <svg class="diagram" viewBox="0 0 640 250" role="img" aria-label="Diagram: an ascending ladder from frontline agents to team leaders to regional executives to a signed agreement, with a turquoise line climbing each step.">
+            <rect class="dbox" x="20" y="178" width="140" height="52" rx="8"/>
+            <text x="34" y="200" class="dtxt">Frontline</text>
+            <text x="34" y="216" class="dtxt">agents</text>
+            <rect class="dbox" x="188" y="128" width="140" height="52" rx="8"/>
+            <text x="202" y="150" class="dtxt">Team</text>
+            <text x="202" y="166" class="dtxt">leaders</text>
+            <rect class="dbox" x="356" y="78" width="150" height="52" rx="8"/>
+            <text x="370" y="100" class="dtxt">Regional</text>
+            <text x="370" y="116" class="dtxt">executives</text>
+            <rect class="dbox dbox-hi" x="524" y="28" width="96" height="52" rx="8"/>
+            <text x="536" y="50" class="dtxt">Signed</text>
+            <text x="536" y="66" class="dtxt">agreement</text>
+            <path class="darrow" d="M160 204 L184 180"/>
+            <path class="darrow" d="M176 172 L184 180 L172 184"/>
+            <path class="darrow" d="M328 154 L352 130"/>
+            <path class="darrow" d="M344 122 L352 130 L340 134"/>
+            <path class="darrow" d="M506 104 L520 80"/>
+            <path class="darrow" d="M512 72 L520 80 L508 84"/>
+          </svg>
+          <div class="dcap">The bottom-up motion behind every Solisa enterprise account.</div>
+        </div>
+      </div>
+
+      <div class="rv">
+        <div class="nblock">
+          <span class="nlabel">Discovery</span>
+          <p>It started with a friend who sold insurance describing the pain over drinks. We discovered the frontline problem with agents and team leaders, built an MVP, a diagram and a plan, and it escalated to the regional manager. A three-hour live Zoom with him and about twenty sales leaders committed the first contract. Bottom-up: frontline agents first, then the decision maker.</p>
+        </div>
+        <div class="nblock">
+          <span class="nlabel">Product</span>
+          <p>Software for insurance brokerages that automates the sales workflow end to end: AI lead sourcing, outreach sequencing and follow-up, retention, and automated policy-compliance workflows. I architected the AI systems and led full-stack development, including a real estate seller-prediction model at 76 percent accuracy.</p>
+        </div>
+        <div class="nblock">
+          <span class="nlabel">Pricing and packaging</span>
+          <p>Priced at $2,000 per agent per month, with adoption schedules written to 600 and 1,000 agents. I set the roadmap, the pricing and the packaging.</p>
+        </div>
+        <div class="nblock">
+          <span class="nlabel">Go-to-market</span>
+          <p>I owned the motion from first conversation to signed contract and personally closed every enterprise account: US Health Advisors (a UnitedHealthcare company, about $914K), Northwestern Mutual, Farmers Insurance and Knickerbocker &amp; Associates, with pilots at AREAA and AIRE Advisors. Regional executives arrived already referenced by their own teams.</p>
+        </div>
+        <div class="nblock">
+          <span class="nlabel">Team</span>
+          <p>Built and led a 12-person team at peak, nine in engineering and three in go-to-market, and recruited Henry Loubet, former CEO of UnitedHealthcare and President of Health Net, as strategic advisor.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="kpi4">
+      <div class="oc rv"><div class="on" data-count="2.5" data-pre="~$" data-post="M" data-dec="1">~$2.5M</div><div class="os">Cumulative revenue in 18 months, from zero</div></div>
+      <div class="oc rv"><div class="on" data-count="1.4" data-pre="$" data-post="M" data-dec="1">$1.4M</div><div class="os">Signed enterprise contracts</div></div>
+      <div class="oc rv"><div class="on" data-count="5" data-post="x">5x</div><div class="os">Lead-to-policy conversion, 0.7% to about 3.5%</div></div>
+      <div class="oc rv"><div class="on" data-count="40" data-pre="+" data-post="%">+40%</div><div class="os">Agent revenue; retention extended from about 3 months to 6 to 12 months</div></div>
+    </div>
+
+    <div class="chiprow rv">
+      <span>US Health Advisors (UnitedHealthcare)</span><span>Northwestern Mutual</span><span>Farmers Insurance</span><span>Knickerbocker &amp; Associates</span><span>AREAA (pilot)</span><span>AIRE Advisors (pilot)</span>
+    </div>
+
+    <p class="small-note rv">Venture Devils funding winner (2x), ASU Lab to Launch winner, Tech Devils Judge's Choice, top 10 at Startup World Cup Arizona, ASU InvestU final four. Showcased on stage as one of four AI founders at Right Side Capital's annual conference, on the panel "The AI Battle in the Enterprise."</p>
+  </div>
+</section>
+
+<!-- 2.3 KIJESTIC -->
+<section id="kijestic" aria-labelledby="kijestic-h">
+  <div class="shell">
+    <div class="case-hd">
+      <div class="eyebrow rv">2.3 &nbsp;/&nbsp; Kijestic AI &nbsp;&middot;&nbsp; February 2026 to now &nbsp;&middot;&nbsp; Chandler, Arizona</div>
+      <h2 class="title rv" id="kijestic-h">An AI systems company that <span class="q">operates what it builds.</span></h2>
+      <div class="role-line rv">Founder</div>
+      <p class="role-note rv">Kijestic designs, builds and runs AI systems around the way a business already works. They connect to the tools it uses, complete defined workflows, and bring the decisions that matter back to the people responsible. It launched publicly in September 2026 with an assessment-led offer, and its client work spans med spa, skincare, supplements, and hair, barber and nail salons. I run my own company on the same system.</p>
+    </div>
+
+    <div class="diagram-wrap rv">
+      <svg class="diagram" viewBox="0 0 980 380" role="img" aria-label="Diagram: the owner approves by text and sees what happened; the Kijestic Brain holds business rules, approval steps and a record of every action; fourteen agent services handle marketing, operations, outreach and review gates with per-department routing and atomic task claiming; a model router spans Anthropic, OpenAI, Google, DeepSeek and xAI with failover chains, per-call cost tracking and a model allowlist; agent services connect to existing tools: booking, store, email and calendar, and payments, which stay with a person. Review gates sit in front of existing tools: nothing customer-facing ships without a gate.">
+        <rect class="dbox" x="14" y="150" width="120" height="80" rx="8"/>
+        <text x="26" y="180" class="dtxt">Owner</text>
+        <text x="26" y="198" class="dsub">Approves by text</text>
+        <text x="26" y="212" class="dsub">sees what happened</text>
+
+        <rect class="dbox dbox-hi" x="176" y="120" width="170" height="140" rx="10"/>
+        <text x="188" y="146" class="dtxt">Kijestic Brain</text>
+        <text x="188" y="166" class="dsub">Business rules</text>
+        <text x="188" y="182" class="dsub">Approval steps</text>
+        <text x="188" y="198" class="dsub">Record of every</text>
+        <text x="188" y="212" class="dsub">action</text>
+
+        <text x="392" y="24" class="dlbl">AGENT SERVICES (14)</text>
+        <rect class="dbox" x="392" y="40" width="190" height="46" rx="8"/>
+        <text x="404" y="68" class="dtxt">Marketing</text>
+        <rect class="dbox" x="392" y="100" width="190" height="46" rx="8"/>
+        <text x="404" y="128" class="dtxt">Operations</text>
+        <rect class="dbox dbox-hi" x="392" y="160" width="190" height="46" rx="8"/>
+        <text x="404" y="188" class="dtxt">Review gates</text>
+        <rect class="dbox" x="392" y="220" width="190" height="46" rx="8"/>
+        <text x="404" y="248" class="dtxt">Outreach</text>
+        <text x="392" y="284" class="dsub">per-department routing</text>
+        <text x="392" y="298" class="dsub">atomic task claiming</text>
+
+        <rect class="dbox" x="600" y="14" width="190" height="92" rx="10"/>
+        <text x="612" y="38" class="dtxt">Model router</text>
+        <text x="612" y="58" class="dsub">Anthropic &middot; OpenAI &middot;</text>
+        <text x="612" y="72" class="dsub">Google &middot; DeepSeek &middot; xAI</text>
+        <text x="612" y="92" class="dsub">failover &middot; per-call cost</text>
+        <text x="612" y="104" class="dsub">model allowlist</text>
+        <path class="dline" d="M660 106 L560 150"/>
+        <path class="darrow" d="M568 143 L560 150 L570 155"/>
+
+        <text x="820" y="24" class="dlbl">EXISTING TOOLS</text>
+        <rect class="dbox" x="820" y="40" width="150" height="46" rx="8"/>
+        <text x="832" y="68" class="dtxt">Booking</text>
+        <rect class="dbox" x="820" y="100" width="150" height="46" rx="8"/>
+        <text x="832" y="128" class="dtxt">Store</text>
+        <rect class="dbox" x="820" y="160" width="150" height="46" rx="8"/>
+        <text x="832" y="180" class="dtxt">Email and</text>
+        <text x="832" y="194" class="dtxt">calendar</text>
+        <rect class="dbox" x="820" y="220" width="150" height="46" rx="8"/>
+        <text x="832" y="240" class="dtxt">Payments</text>
+        <text x="832" y="254" class="dsub">(human)</text>
+
+        <path class="darrow" d="M134 190 L172 190"/>
+        <path class="darrow" d="M164 184 L172 190 L164 196"/>
+        <path class="darrow" d="M172 200 L134 200"/>
+        <path class="darrow" d="M142 194 L134 200 L142 206"/>
+        <path class="darrow" d="M346 180 L388 180"/>
+        <path class="darrow" d="M380 174 L388 180 L380 186"/>
+        <path class="darrow" d="M582 183 L816 183"/>
+        <path class="darrow" d="M808 177 L816 183 L808 189"/>
+        <text x="600" y="172" class="dlbl">nothing customer-facing ships without a gate</text>
+      </svg>
+      <div class="dcap">As designed and running internally. Payments, credentials, DNS, legal and banking stay with a person.</div>
+    </div>
+
+    <div class="kijgrid">
+      <div class="rv">
+        <div class="nblock">
+          <span class="nlabel">The infrastructure</span>
+          <p>Fourteen scheduled agent services, one per department, with per-department routing, atomic task claiming and quality gates that block weak output before it ships. Multi-provider LLM routing across Anthropic, OpenAI, Google, DeepSeek and xAI with failover chains, per-call cost tracking and a model-ID allowlist. A governed knowledge base with permission tiers, write modes and validation, so agents load the right rules at the moment they need them. A dispatch seam where a worker's output is accepted or rejected by the parent and committed by explicit path, never by habit. Review boards that score output before it publishes; they scored my own writing 6.6 out of 10 and were right.</p>
+        </div>
+      </div>
+
+      <div class="kcards">
+        <article class="prod-card rv">
+          <div class="pc-shots">
+            <figure class="bframe">
+              <div class="bbar"><div class="bdots"><span></span><span></span><span></span></div><div class="burl">dermetry.com</div></div>
+              <picture>
+                <source type="image/webp" srcset="shots/dermetry-800.webp 800w, shots/dermetry-1200.webp 1200w" sizes="(max-width: 900px) 92vw, 420px">
+                <img src="shots/dermetry-800.webp" width="1200" height="750" alt="Screenshot of the dermetry.com homepage" loading="lazy" decoding="async">
+              </picture>
+              <figcaption>dermetry.com, captured September 24, 2026.</figcaption>
+            </figure>
+            <figure class="bframe">
+              <div class="bbar"><div class="bdots"><span></span><span></span><span></span></div><div class="burl">dermetry.com/hair</div></div>
+              <picture>
+                <source type="image/webp" srcset="shots/dermetry-hair-800.webp 800w, shots/dermetry-hair-1200.webp 1200w" sizes="(max-width: 900px) 92vw, 420px">
+                <img src="shots/dermetry-hair-800.webp" width="1200" height="750" alt="Screenshot of the dermetry.com/hair Face Verdict feature" loading="lazy" decoding="async">
+              </picture>
+              <figcaption>dermetry.com/hair, captured September 24, 2026.</figcaption>
+            </figure>
+          </div>
+          <div class="pc-body">
+            <span class="pill">Kijestic product &middot; live and paid</span>
+            <h4>Dermetry</h4>
+            <p>On-device skin analysis: computer vision scores skin on the visitor's own device in seconds and turns the result into guidance, not a diagnosis. Face Verdict is live and taking payments: it analyzes facial proportions on-device, ranks a hairstyle catalogue deterministically and renders identity-locked previews on the user's own photo, with a Stripe credit ledger behind it. Dermetry Pro installs with one script tag and runs on a skincare brand's live store. Photos are never stored.</p>
+          </div>
+        </article>
+
+        <article class="prod-card rv">
+          <div class="pc-shots">
+            <figure class="bframe">
+              <div class="bbar"><div class="bdots"><span></span><span></span><span></span></div><div class="burl">dasomessence.com</div></div>
+              <picture>
+                <source type="image/webp" srcset="shots/dasom-800.webp 800w, shots/dasom-1200.webp 1200w" sizes="(max-width: 900px) 92vw, 420px">
+                <img src="shots/dasom-800.webp" width="1200" height="750" alt="Screenshot of the dasomessence.com product page" loading="lazy" decoding="async">
+              </picture>
+              <figcaption>dasomessence.com, captured September 24, 2026.</figcaption>
+            </figure>
+          </div>
+          <div class="pc-body">
+            <span class="pill">Kijestic client work</span>
+            <h4>Dasom Essence and Fresh Touch Med Spa, Ajax, Ontario</h4>
+            <p>For Dasom Essence, a K-beauty skincare brand: the on-device skin scan on the live store, the reviews and trust system, the product page rebuild, and a content production and review pipeline with claims checks before anything posts. For Fresh Touch Med Spa: online booking where every call to action had dead-ended in a contact form, search titles and descriptions where they were missing, LocalBusiness, Review and FAQ structured data, a reviews badge, and compliance-risky medical claims rewritten.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="incidents">
+      <div class="inc rv"><span class="il">Incident</span><p>An agent changed a production config based on a fact it invented.</p></div>
+      <div class="inc rv"><span class="il">Incident</span><p>Ninety-one task failures in one night that were one full disk.</p></div>
+      <div class="inc rv"><span class="il">Incident</span><p>One hundred and one outbound emails that failed on a DNS record, not the copy.</p></div>
+    </div>
+    <p class="small-note rv">Each one became a gate, a check, or a rule the agents now load before they act.</p>
+
+    <figure class="bframe rv" style="margin-top:44px">
+      <div class="bbar"><div class="bdots"><span></span><span></span><span></span></div><div class="burl">kijestic.com</div></div>
+      <picture>
+        <source type="image/webp" srcset="shots/kijestic-800.webp 800w, shots/kijestic-1200.webp 1200w" sizes="92vw">
+        <img src="shots/kijestic-800.webp" width="1200" height="750" alt="Screenshot of the kijestic.com homepage" loading="lazy" decoding="async">
+      </picture>
+      <figcaption>kijestic.com, launched September 2026. Assessment-led: know what to automate first, and what it will take to implement it.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 2.4 DOORSTOPPER -->
+<section id="doorstopper" aria-labelledby="doorstopper-h">
+  <div class="shell">
+    <div class="case-hd">
+      <div class="eyebrow rv">2.4 &nbsp;/&nbsp; DoorStopper &nbsp;&middot;&nbsp; April 2026 to now &nbsp;&middot;&nbsp; Chandler, Arizona &nbsp;&middot;&nbsp; Delaware C-Corp</div>
+      <h2 class="title rv" id="doorstopper-h">Property-management workflow software, <span class="q">built by an operator who placed tenants himself.</span></h2>
+      <div class="role-line rv">Founder</div>
+      <p class="role-note rv">DoorStopper helps property managers coordinate eligibility, payment exceptions, documentation, and re-leasing workflows without replacing their property-management system. It began as a placement service, and the placements are where the product came from.</p>
+    </div>
+
+    <div class="phase-grid">
+      <div class="phase-block rv">
+        <div class="phase-lbl">Phase 1 &middot; April to June 2026 &middot; Pay-when-filled tenant placement</div>
+        <p>Built solo: a Next.js application, an AI leasing agent answering inbound rental leads in under 60 seconds and booking showings 24/7, multi-platform listing syndication, a tenant application flow with sensitive data encrypted at rest, a broker compliance dashboard, and outcome-based billing on Stripe.</p>
+        <div class="pstack">
+          <div class="kpirow"><div class="kn" data-count="8">8</div><div class="kl">Placements in the first three months</div></div>
+          <div class="kpirow"><div class="kn" data-count="12.8" data-pre="$" data-post="K" data-dec="1">$12.8K</div><div class="kl">Collected</div></div>
+          <div class="kpirow"><div class="kn" data-count="3">3</div><div class="kl">Signed licensed brokerage partnerships (Arizona, Tennessee, San Diego)</div></div>
+          <div class="kpirow"><div class="kn" data-count="52" data-pre="$" data-post="M">$52M</div><div class="kl">Assets under management reached before the placement-first pivot</div></div>
+        </div>
+      </div>
+
+      <div class="phase-block rv">
+        <div class="phase-lbl">Phase 2 &middot; September 2026 to now &middot; DoorStopper for Property Managers</div>
+        <p>The placements taught the real lesson: property managers, not individual landlords, own the recurring workflow, and they inherit every exception a rent-risk program creates. DoorStopper now runs the missed-payment workflow beside the PMS a team already uses: one record for every missed payment, documentation, provider handoffs, owner updates in the property manager's name, and re-leasing when a unit turns. DoorStopper Protect is the persistent operating product; any financial-protection component would come from a named licensed provider. Discovery calls with property managers put nonpayment first and software second, and the workflow order follows that.</p>
+
+        <div class="diagram-wrap" style="margin-top:22px">
+          <svg class="diagram" viewBox="0 0 980 190" role="img" aria-label="Diagram: a five-step exception workflow rail. Payment exception opened from a PMS export, then owner notified in the property manager's name, then documentation with records on file and a due date, highlighted as the current stage, then provider handoff where the provider reviews and decides, then re-leasing prepared if the unit turns.">
+            <line x1="70" y1="100" x2="930" y2="100" stroke="var(--line)" stroke-width="2"/>
+            <line x1="70" y1="100" x2="500" y2="100" stroke="var(--turq)" stroke-width="2"/>
+            <circle cx="70" cy="100" r="6" fill="var(--turq)"/>
+            <circle cx="285" cy="100" r="6" fill="var(--turq)"/>
+            <circle cx="500" cy="100" r="7" fill="var(--turq)"/>
+            <circle cx="715" cy="100" r="6" fill="var(--line-hi)"/>
+            <circle cx="930" cy="100" r="6" fill="var(--line-hi)"/>
+
+            <rect class="dbox" x="0" y="15" width="150" height="70" rx="8"/>
+            <text x="10" y="38" class="dtxt">Payment exception</text>
+            <text x="10" y="54" class="dtxt">opened</text>
+            <text x="10" y="72" class="dsub">from PMS export</text>
+
+            <rect class="dbox" x="205" y="15" width="160" height="70" rx="8"/>
+            <text x="215" y="38" class="dtxt">Owner notified</text>
+            <text x="215" y="56" class="dsub">in the PM's name</text>
+
+            <rect class="dbox dbox-hi" x="418" y="15" width="164" height="70" rx="8"/>
+            <text x="428" y="38" class="dtxt">Documentation</text>
+            <text x="428" y="54" class="dsub">records on file,</text>
+            <text x="428" y="68" class="dsub">due date</text>
+
+            <rect class="dbox" x="633" y="15" width="164" height="70" rx="8"/>
+            <text x="643" y="38" class="dtxt">Provider handoff</text>
+            <text x="643" y="54" class="dsub">provider reviews</text>
+            <text x="643" y="68" class="dsub">and decides</text>
+
+            <rect class="dbox" x="850" y="15" width="130" height="70" rx="8"/>
+            <text x="860" y="38" class="dtxt">Re-leasing</text>
+            <text x="860" y="54" class="dsub">prepared if unit</text>
+            <text x="860" y="68" class="dsub">turns</text>
+          </svg>
+          <div class="dcap">As designed. Sample data. Product preview.</div>
+        </div>
+
+        <div class="phase2-shots">
+          <figure class="bframe">
+            <div class="bbar"><div class="bdots"><span></span><span></span><span></span></div><div class="burl">doorstopper.io</div></div>
+            <picture>
+              <source type="image/webp" srcset="shots/doorstopper-800.webp 800w, shots/doorstopper-1200.webp 1200w" sizes="(max-width: 600px) 92vw, 46vw">
+              <img src="shots/doorstopper-800.webp" width="1200" height="750" alt="Screenshot of doorstopper.io" loading="lazy" decoding="async">
+            </picture>
+            <figcaption>doorstopper.io, captured September 24, 2026.</figcaption>
+          </figure>
+          <figure class="bframe">
+            <div class="bbar"><div class="bdots"><span></span><span></span><span></span></div><div class="burl">doorstopper.io/protect</div></div>
+            <picture>
+              <source type="image/webp" srcset="shots/doorstopper-protect-800.webp 800w, shots/doorstopper-protect-1200.webp 1200w" sizes="(max-width: 600px) 92vw, 46vw">
+              <img src="shots/doorstopper-protect-800.webp" width="1200" height="750" alt="Screenshot of the doorstopper.io/protect page" loading="lazy" decoding="async">
+            </picture>
+            <figcaption>doorstopper.io/protect, captured September 24, 2026.</figcaption>
+          </figure>
+        </div>
+
+        <div class="stage-line">Stage: Product preview as designed &middot; in discovery with property managers &middot; interactive prototype used in discovery &middot; provider programs still being assessed.</div>
+      </div>
+    </div>
+
+    <div class="htl3">
+      <div class="htn rv"><div class="htd">April 2026</div><p>Placement-first, landlords</p></div>
+      <div class="htn rv"><div class="htd">June 2026</div><p>Placement phase closes with 8 placements and 3 broker partners</p></div>
+      <div class="htn rv"><div class="htd">September 2026</div><p>Rent-risk operations for property managers, Protect as the operating product</p></div>
+    </div>
+
+    <p class="boundary rv">DoorStopper provides workflow and support services. It does not underwrite coverage or decide claims.</p>
+  </div>
+</section>
+
+<!-- EARLIER WORK -->
+<section id="earlier" aria-labelledby="earlier-h">
+  <div class="shell">
+    <div class="eyebrow rv">03 &nbsp;/&nbsp; Earlier work</div>
+    <h2 class="title rv" id="earlier-h">Where the habits <span class="q">came from.</span></h2>
+    <div class="vgrid">
+      <article class="v rv">
+        <div class="vtop">
+          <div>
+            <h3>Accompanian</h3>
+            <div class="role">Co-Founder &middot; October 2023 to May 2024 &middot; Tempe, Arizona</div>
+          </div>
+          <span class="pill">Acquired</span>
+        </div>
+        <p>A habit tracking and mental wellness app grown to 4,000+ active users. Licensed psychotherapy practices clinically reviewed the flows and referred users. Won ASU Venture Devils funding. Exited via acquisition.</p>
+      </article>
+      <article class="v rv">
+        <div class="vtop">
+          <div>
+            <h3>K Productions</h3>
+            <div class="role">Founder &middot; 2018 &middot; age 17</div>
+          </div>
+        </div>
+        <p>Web design, social media and advertising for local businesses. It started by booking a room at the library and cold-calling businesses with no website or a bad one, with friends from high school. Reached $100K ARR while still in high school.</p>
+      </article>
+      <article class="v rv">
+        <div class="vtop">
+          <div>
+            <h3>Mocsin Inc.</h3>
+            <div class="role">Sales &middot; 2020 to 2021 &middot; Mesa, Arizona</div>
+          </div>
+        </div>
+        <p>Kiosk sales inside Costco, Target and Walmart. Top 3 in sales within three months and the youngest person on the floor. First in that office to sell over social media and the phone, with a text and email follow-up system for kiosk leads. Learned the whole TV and speaker section so I could answer a customer's real question before asking about the product.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT I BRING -->
+<section id="bring" aria-labelledby="bring-h">
+  <div class="shell">
+    <div class="eyebrow rv">04 &nbsp;/&nbsp; What I bring</div>
+    <h2 class="title rv" id="bring-h">Seven things the record <span class="q">shows.</span></h2>
+    <div class="rv">
+      <div class="krow"><div class="k">Enterprise &amp; internal products</div><div class="val">Built SWIFT and moved One Flow onto it inside a three-region organization at Renesas.</div></div>
+      <div class="krow"><div class="k">AI systems in production</div><div class="val">Fourteen agent services, five-provider routing and review gates run Kijestic and its client work every day.</div></div>
+      <div class="krow"><div class="k">Complex workflows</div><div class="val">Insurance sales compliance at Solisa; missed-payment exceptions across PMS, owner, provider and re-leasing at DoorStopper.</div></div>
+      <div class="krow"><div class="k">Technical product ownership</div><div class="val">Architecture, code, pricing and contract on every product I have owned.</div></div>
+      <div class="krow"><div class="k">Discovery &amp; go-to-market</div><div class="val">Frontline-first discovery that closed every Solisa enterprise account; PM discovery that reset DoorStopper's model.</div></div>
+      <div class="krow"><div class="k">Adoption &amp; migration</div><div class="val">A running methodology platform moved without a stop; a placement service turned into an operating layer.</div></div>
+      <div class="krow"><div class="k">Measurable outcomes</div><div class="val">$1.4M signed, 5x conversion, +40% agent revenue, 8 placements in a quarter, a product live and paid.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section id="contact" aria-labelledby="contact-h">
+  <div class="shell">
+    <div class="eyebrow rv">05 &nbsp;/&nbsp; Working with me</div>
+    <h2 class="title rv" id="contact-h">Two companies to run, and room for <span class="q">the right problem.</span></h2>
+    <p class="rv">I operate Kijestic AI and DoorStopper. For a genuinely high-impact product, AI or strategy leadership seat, I am open to the conversation. Pick the path that fits.</p>
+    <div class="path-row">
+      <div class="path rv">
+        <h3>Hiring</h3>
+        <p>Product, AI, operations or strategy leadership.</p>
+        <a class="btn btn-solid" href="mailto:kelvintran1000@gmail.com" data-cur>kelvintran1000@gmail.com</a>
+        <div style="margin-top:12px"><a class="btn btn-line" href="/resume" data-cur>Resume</a></div>
+      </div>
+      <div class="path rv">
+        <h3>Kijestic</h3>
+        <p>AI systems for your appointment business, starting with an assessment.</p>
+        <a class="btn btn-line" href="https://kijestic.com" target="_blank" rel="noopener" data-cur>kijestic.com</a>
+      </div>
+      <div class="path rv">
+        <h3>DoorStopper</h3>
+        <p>Rent-risk operations for property managers.</p>
+        <a class="btn btn-line" href="https://doorstopper.io" target="_blank" rel="noopener" data-cur>doorstopper.io</a>
+      </div>
+    </div>
+    <div class="clinks rv">
+      <a class="btn btn-line" href="https://linkedin.com/in/kelvintran888" target="_blank" rel="noopener" data-cur>LinkedIn</a>
+      <a class="btn btn-line" href="https://github.com/kelvinDtran" target="_blank" rel="noopener" data-cur>GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="shell frow">
+    <span>&copy; 2026 Kelvin Tran</span>
+    <span><a href="/">Home</a></span>
+    <span><a href="/resume">Resume</a></span>
+    <span><a href="https://kijestic.com" target="_blank" rel="noopener">Kijestic</a></span>
+    <span><a href="https://doorstopper.io" target="_blank" rel="noopener">DoorStopper</a></span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  /* ---------- spring cursor ---------- */
+  if (fine && !reduce) {
+    var dot = document.querySelector('.cur'), ring = document.querySelector('.cur-ring');
+    var mx = innerWidth / 2, my = innerHeight / 2;
+    var s = { x: mx, y: my, vx: 0, vy: 0 };
+    var last = performance.now(), running = false;
+
+    addEventListener('mousemove', function (e) {
+      mx = e.clientX; my = e.clientY;
+      dot.style.transform = 'translate(' + mx + 'px,' + my + 'px)';
+      if (!running) { running = true; last = performance.now(); requestAnimationFrame(tick); }
+    }, { passive: true });
+
+    function tick(now) {
+      var dt = Math.min((now - last) / 1000, 0.064);
+      last = now;
+      var k = 170, d = 26;
+      s.vx += (-k * (s.x - mx) - d * s.vx) * dt;
+      s.vy += (-k * (s.y - my) - d * s.vy) * dt;
+      s.x += s.vx * dt; s.y += s.vy * dt;
+      ring.style.transform = 'translate(' + s.x + 'px,' + s.y + 'px)';
+      if (Math.abs(s.x - mx) + Math.abs(s.y - my) + Math.abs(s.vx) + Math.abs(s.vy) > 0.4) {
+        requestAnimationFrame(tick);
+      } else { running = false; }
+    }
+
+    var hot = 'a, button, [data-cur], .v, .cix, .pr, .path, .prod-card, .inc';
+    document.querySelectorAll(hot).forEach(function (el) {
+      el.addEventListener('mouseenter', function () { ring.classList.add('on'); });
+      el.addEventListener('mouseleave', function () { ring.classList.remove('on'); });
+    });
+  }
+
+  /* ---------- mobile menu ---------- */
+  var nav = document.getElementById('nav'), mb = document.getElementById('menubtn');
+  if (nav && mb) {
+    mb.addEventListener('click', function () {
+      var open = nav.classList.toggle('open');
+      mb.setAttribute('aria-expanded', open ? 'true' : 'false');
+      mb.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+    nav.querySelectorAll('.navlinks a').forEach(function (a) {
+      a.addEventListener('click', function () { nav.classList.remove('open'); mb.setAttribute('aria-expanded', 'false'); });
+    });
+  }
+
+  /* ---------- reveal on scroll ---------- */
+  var rv = document.querySelectorAll('.rv');
+  if ('IntersectionObserver' in window && !reduce) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    rv.forEach(function (el) { io.observe(el); });
+  } else {
+    rv.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  /* ---------- count-up ---------- */
+  function runCount(el) {
+    var to = parseFloat(el.dataset.count), dec = parseInt(el.dataset.dec || '0', 10);
+    var pre = el.dataset.pre || '', post = el.dataset.post || '';
+    if (reduce) return;
+    var t0 = performance.now(), dur = 1150;
+    (function step(now) {
+      var p = Math.min((now - t0) / dur, 1);
+      var e = 1 - Math.pow(1 - p, 3);
+      var v = to * e;
+      el.textContent = pre + (dec ? v.toFixed(dec) : Math.round(v).toLocaleString()) + post;
+      if (p < 1) requestAnimationFrame(step);
+    })(t0);
+  }
+  var counters = document.querySelectorAll('[data-count]');
+  if ('IntersectionObserver' in window) {
+    var io2 = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { runCount(e.target); io2.unobserve(e.target); } });
+    }, { threshold: 0.6 });
+    counters.forEach(function (c) { io2.observe(c); });
+  }
+
+  /* ---------- active case in index strip ---------- */
+  var caseSections = ['renesas', 'solisa', 'kijestic', 'doorstopper'].map(function (id) { return document.getElementById(id); }).filter(Boolean);
+  var caseLinks = document.querySelectorAll('#caseIndex [data-case]');
+  if ('IntersectionObserver' in window && caseSections.length) {
+    var io3 = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) {
+          caseLinks.forEach(function (l) { l.classList.toggle('active', l.dataset.case === e.target.id); });
+        }
+      });
+    }, { threshold: 0.3, rootMargin: '-30% 0px -55% 0px' });
+    caseSections.forEach(function (s) { io3.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>
