@@ -135,6 +135,8 @@
   .brand { display: flex; align-items: center; gap: 11px; font-family: var(--display); font-weight: 700; font-size: 15px; letter-spacing: -.02em; }
   .brand svg { width: 24px; height: 24px; display: block; }
   .brand em { font-style: normal; color: var(--slate); font-weight: 500; }
+  .brand { white-space: nowrap; }
+  @media (max-width: 480px) { .brand em { display: none; } }
   .navlinks { display: flex; align-items: center; gap: 30px; }
   .navlinks a {
     font-family: var(--mono); font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase;
