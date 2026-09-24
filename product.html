@@ -337,6 +337,12 @@
     color: var(--turq); border: 1px solid rgba(47,230,208,.32); background: var(--wash);
   }
   .v p { color: var(--ash); font-size: 13.5px; margin-top: 15px; line-height: 1.6; }
+  .vgrid.four { grid-template-columns: repeat(4, 1fr); }
+  @media (max-width: 1100px) { .vgrid.four { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px) { .vgrid.four { grid-template-columns: 1fr; } }
+  .v .vlink { display: inline-flex; align-items: center; gap: 7px; margin-top: 18px; font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--turq); }
+  .v .vlink:hover { color: var(--bone); }
+  .v .vnote { display: inline-flex; margin-top: 18px; font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--slate); }
 
   .krow { display: grid; grid-template-columns: 190px 1fr; gap: 26px; padding: 16px 0; border-top: 1px solid var(--line); align-items: baseline; }
   @media (max-width: 720px) { .krow { grid-template-columns: 1fr; gap: 4px; } }
@@ -940,10 +946,70 @@
   </div>
 </section>
 
+<!-- MORE PRODUCTS -->
+<section id="more" aria-labelledby="more-h">
+  <div class="shell">
+    <div class="eyebrow rv">03 &nbsp;/&nbsp; More products shipped</div>
+    <h2 class="title rv" id="more-h">Smaller builds, <span class="q">same method.</span></h2>
+    <p class="lede rv" style="margin-top:0; margin-bottom:34px">Tools I built and run alongside the four case studies. Each one is live or in daily internal use; none is a mockup.</p>
+    <div class="vgrid four">
+
+      <article class="v rv">
+        <div class="vtop">
+          <div>
+            <h3>KijesticPresentation</h3>
+            <div class="role">Built solo &middot; 2026</div>
+          </div>
+          <span class="pill">Open source</span>
+        </div>
+        <p>An AI pitch-deck pipeline. Five Claude agents (research, strategy, content, design, review) turn a company brief into an investor deck as PPTX, HTML and PDF. Python engine on python-pptx with streamed progress, plus a SaaS wrapper on Next.js, FastAPI, Supabase and Stripe. Used to produce a real founder deck.</p>
+        <a class="vlink" href="https://github.com/kelvinDtran/KijesticPresentation" target="_blank" rel="noopener">github.com/kelvinDtran &rarr;</a>
+      </article>
+
+      <article class="v rv">
+        <div class="vtop">
+          <div>
+            <h3>Coding Academy</h3>
+            <div class="role">Built solo &middot; 2026</div>
+          </div>
+          <span class="pill">Live</span>
+        </div>
+        <p>An interactive coding tutor: 68 challenges across Kotlin, Python and C++, with AST-based analysis of the learner's code, progressive hints, XP progression and boss-fight simulations. Next.js.</p>
+        <a class="vlink" href="https://codingacademy.kijestic.com" target="_blank" rel="noopener">codingacademy.kijestic.com &rarr;</a>
+      </article>
+
+      <article class="v rv">
+        <div class="vtop">
+          <div>
+            <h3>Kijestic Studio</h3>
+            <div class="role">Built solo &middot; 2026</div>
+          </div>
+          <span class="pill">Protected workspace</span>
+        </div>
+        <p>A short-form content generation platform: brief, still image and voice in, finished vertical video out. Next.js, Supabase and fal.ai, with review before anything is used. The production tooling behind the client content pipeline in the Kijestic case study.</p>
+        <span class="vnote">Sign-in only</span>
+      </article>
+
+      <article class="v rv">
+        <div class="vtop">
+          <div>
+            <h3>Command Center</h3>
+            <div class="role">Built solo &middot; 2026</div>
+          </div>
+          <span class="pill">Internal</span>
+        </div>
+        <p>The founder-ops tools that run the company day to day: a planner with a priority queue, quick-add and triage, and a task hub with per-company workspaces, on Supabase. Built so one principal can stay on top of the agent services and the client work.</p>
+        <span class="vnote">Internal &middot; in use</span>
+      </article>
+
+    </div>
+  </div>
+</section>
+
 <!-- EARLIER WORK -->
 <section id="earlier" aria-labelledby="earlier-h">
   <div class="shell">
-    <div class="eyebrow rv">03 &nbsp;/&nbsp; Earlier work</div>
+    <div class="eyebrow rv">04 &nbsp;/&nbsp; Earlier work</div>
     <h2 class="title rv" id="earlier-h">Where the habits <span class="q">came from.</span></h2>
     <div class="vgrid">
       <article class="v rv">
@@ -981,7 +1047,7 @@
 <!-- WHAT I BRING -->
 <section id="bring" aria-labelledby="bring-h">
   <div class="shell">
-    <div class="eyebrow rv">04 &nbsp;/&nbsp; What I bring</div>
+    <div class="eyebrow rv">05 &nbsp;/&nbsp; What I bring</div>
     <h2 class="title rv" id="bring-h">Seven things the record <span class="q">shows.</span></h2>
     <div class="rv">
       <div class="krow"><div class="k">Enterprise &amp; internal products</div><div class="val">Built SWIFT and moved One Flow onto it inside a three-region organization at Renesas.</div></div>
@@ -998,7 +1064,7 @@
 <!-- CLOSING -->
 <section id="contact" aria-labelledby="contact-h">
   <div class="shell">
-    <div class="eyebrow rv">05 &nbsp;/&nbsp; Working with me</div>
+    <div class="eyebrow rv">06 &nbsp;/&nbsp; Working with me</div>
     <h2 class="title rv" id="contact-h">Two companies to run, and room for <span class="q">the right problem.</span></h2>
     <p class="rv">I operate Kijestic AI and DoorStopper. For a genuinely high-impact product, AI or strategy leadership seat, I am open to the conversation. Pick the path that fits.</p>
     <div class="path-row">
